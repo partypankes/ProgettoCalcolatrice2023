@@ -13,7 +13,7 @@ Info:
 - supporta fino a 26 variabili;
 - supporta le operazioni: *+*, *-*, */*, *, *sqrt*, **+-**;
 - basato su stuttura LIFO;
-- implementa un'interfaccia (forse)
+- implementa un'interfaccia;
 
 # Progress Tracking
 <a href="https://github.com/partypankes/ProgettoCalcolatrice2023/milestone/5"><img alt="GitHub milestone details" src="https://img.shields.io/github/milestones/progress-percent/partypankes/ProgettoCalcolatrice2023/5?style=flat&labelColor=black&color=%23197d35"></a>
