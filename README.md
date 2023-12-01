@@ -13,5 +13,5 @@ Info:
 - supporta fino a 26 variabili;
 - supporta le operazioni: *+*, *-*, */*, *, *sqrt*, **+-**;
 - basato su stuttura LIFO;
-- implementa un'interfaccia;
+- implementa un'interfaccia grafica (GUI);
 
