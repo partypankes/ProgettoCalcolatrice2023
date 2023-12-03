@@ -1,4 +1,4 @@
-package group21.calculator;
+package group21.calculator.operation;
 
 public interface PerformOperation {
 

@@ -1,4 +1,6 @@
-package group21.calculator;
+package group21.calculator.type;
+import group21.calculator.type.ComplexNumber;
+
 import java.util.Stack;
 
 

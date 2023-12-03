@@ -1,5 +1,7 @@
-package group21.calculator;
+package group21.calculator.operation;
 
+
+import group21.calculator.type.StackNumber;
 
 public class Operation implements PerformOperation {
 
@@ -13,30 +15,29 @@ public class Operation implements PerformOperation {
     @Override
     public void perform(String operation) {
         for (int i = 0; i < operation.length(); i++) {
-            switch (operation) {
-                case "+":
+            switch (operation.charAt(i)) {
+                case '+':
                     number.pushNumber(number.dropNumber().add(number.dropNumber()));
                     break;
-                case "-":
+                case '-':
                     number.swapNumber();
                     number.pushNumber(number.dropNumber().subtract(number.dropNumber()));
                     break;
-                case "*":
+                case '*':
                     number.pushNumber(number.dropNumber().multiply(number.dropNumber()));
                     break;
-                case "/":
+                case '/':
                     number.swapNumber();
                     number.pushNumber(number.dropNumber().divide(number.dropNumber()));
                     break;
-                case "sqrt":
+                case '√':
                     number.pushNumber(number.dropNumber().squareRoot());
                     break;
-                case "±":
+                case '±':
                     number.pushNumber(number.dropNumber().invertSign());
                     break;
             }
 
         }
-
     }
 }

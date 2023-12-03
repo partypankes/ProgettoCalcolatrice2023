@@ -1,10 +1,12 @@
-package group21.calculator;
+package group21.calculator.operation;
+
+import group21.calculator.type.ComplexNumber;
+import group21.calculator.type.StackNumber;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
-public class Variables implements PerformOperation{
+public class Variables implements PerformOperation {
     private final StackNumber stack;
     private Map<Character, ComplexNumber> variables;
     public Variables(StackNumber stack){
@@ -50,7 +52,7 @@ public class Variables implements PerformOperation{
 */
     @Override
     public void perform(String str) {
-        switch (str.charAt(0)) {
+       /* switch (str.charAt(0)) {
             case '>':
                 saveVariable(str.charAt(1), stack);
                 break;
@@ -63,7 +65,7 @@ public class Variables implements PerformOperation{
             case '-':
                 subtractValueFromVariable(str.charAt(1), stack);
                 break;
-        }
+        }*/
     }
 /*
     //Inizializza tutte le varibili necessarie sotto forma di chiave-valore (Variabile-ComplexNumbers)

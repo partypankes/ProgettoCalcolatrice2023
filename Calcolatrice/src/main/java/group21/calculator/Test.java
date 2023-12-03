@@ -1,9 +1,11 @@
 package group21.calculator;
 
+import group21.calculator.operation.Execute;
+
 //POSSIBILE IDEA -> stack su GUI non visibile fino alla fine della stringa delle operazioni
 // array di operazioni da swappare prima di eseguirle
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         // (3 + 6 / 2) -> 3 6 2 + /
         //             -> 3 3 2 * + -> swap -> 3 2 3 * +  ->  3 3 +  ->  6
@@ -12,19 +14,15 @@ public class Test {
 
         //In TextArea viene inserito un valore da GUI:
         String textArea = "30+5j";
-        StackNumber  number = new StackNumber();
+        Execute execute = new Execute("sqrt");
         //stack.pushNumber(ComplexNumber.complexParse("6+5j"));
         //stack.pushNumber(ComplexNumber.complexParse("2+5j"));
-        Operation performOp = new Operation(number);
-        number.pushNumber(ComplexNumber.complexParse("-4"));
-        performOp.performOperation("sqrt");
-        //exe.performOperation("+");
+        execute.elaboraTextArea();
 
 
 
 
 
 
-        System.out.println(performOp.peekNumber());
     }
 }
