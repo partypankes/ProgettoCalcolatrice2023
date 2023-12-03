@@ -1,4 +1,4 @@
-package com.example.calcolatrice;
+package group21.calculator;
 
 public class ComplexNumber {
     private double real;
@@ -17,24 +17,24 @@ public class ComplexNumber {
         return imaginary;
     }
 
-    //effettua l'addizione tra due numeri complessi
+    //effettua l'addizione tra due numeri complessi CORRETTO
     public ComplexNumber add(ComplexNumber other) {
         return new ComplexNumber(this.real + other.real, this.imaginary + other.imaginary);
     }
 
-    //effettua la sottrazione tra due numeri complessi
+    //effettua la sottrazione tra due numeri complessi CORRETTO
     public ComplexNumber subtract(ComplexNumber other) {
         return new ComplexNumber(this.real - other.real, this.imaginary - other.imaginary);
     }
 
-    //effettua la moltiplicazione tra due numeri complessi
+    //effettua la moltiplicazione tra due numeri complessi CORRETTO
     public ComplexNumber multiply(ComplexNumber other) {
         double newReal = this.real * other.real - this.imaginary * other.imaginary;
         double newImaginary = this.real *  other.imaginary + this.imaginary * other.real;
         return new ComplexNumber(newReal, newImaginary);
     }
 
-    //effettua la divisione tra due numeri complessi
+    //effettua la divisione tra due numeri complessi CORRETTO
     public ComplexNumber divide(ComplexNumber other) {
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
 
@@ -48,7 +48,7 @@ public class ComplexNumber {
         return new ComplexNumber(newReal, newImaginary);
     }
 
-    //effettua la radice quadrata del numero complesso
+    //effettua la radice quadrata del numero complesso CORRETTO
     public ComplexNumber squareRoot() {
         double magnitude = Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
         double angle = Math.atan2(this.imaginary, this.real) / 2.0;
@@ -58,10 +58,11 @@ public class ComplexNumber {
 
         return new ComplexNumber(newReal, newImaginary);
     }
-    //effettua l'inversione di segno
+    //effettua l'inversione di segno CORRETTO
     public ComplexNumber invertSign() {
         return new ComplexNumber(-this.real, -this.imaginary);
     }
+
 
 
     //Dato un numero complesso scritto in stringa viene trasformato in ComplexNumber
@@ -76,6 +77,7 @@ public class ComplexNumber {
         }
         return new ComplexNumber(Double.parseDouble(str),0);
     }
+
 
     @Override
     public String toString() {
