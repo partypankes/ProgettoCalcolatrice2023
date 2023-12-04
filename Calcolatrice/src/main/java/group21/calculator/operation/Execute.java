@@ -8,15 +8,15 @@ import group21.calculator.type.StackNumber;
 public class Execute /* extends StackNumber */{
     private String textArea;
     private StackNumber stack;
-    private Operation op;
     private Variables var;
+
+    private final String regex = ".*[/±*\\-+√].*";
 
 
     public Execute(String textArea){
         this.stack = new StackNumber();
         this.textArea = textArea;
-        this.op = new Operation(stack);
-        this.var = new Variables(stack);
+        this.var = new Variables();
     }
 
 
@@ -30,11 +30,11 @@ public class Execute /* extends StackNumber */{
             stack.pushNumber(ComplexNumber.complexParse(textArea));
 
         } else if(textArea.matches(".*[A-Z]1")){
-            var.perform(textArea);
+            var.perform(this.textArea,this.stack);
 
-        } else if(textArea.matches(".*[/±*\\-+√].*") ){
+        } else if(textArea.matches(regex) ){
             //matches per operazioni: prende text area e la salva come inverso
-            op.perform(new StringBuilder(textArea).reverse().toString());
+            Operation.perform(new StringBuilder(textArea).reverse().toString(),this.stack);
         } else {
             throw new Exception("Invalid Input");
         }
