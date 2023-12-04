@@ -3,17 +3,15 @@ package group21.calculator.operation;
 
 import group21.calculator.type.StackNumber;
 
-public class Operation implements PerformOperation {
+public class Operation {
 
-    private StackNumber number;
 
-    public Operation(StackNumber number) {
-        this.number = number;
+    public Operation() {
+
     }
 
     //altro modo:  char sqrt -> 's', char ± -> 'm'
-    @Override
-    public void perform(String operation) {
+    public static void perform(String operation,StackNumber number) {
         for (int i = 0; i < operation.length(); i++) {
             switch (operation.charAt(i)) {
                 case '+':
@@ -37,7 +35,7 @@ public class Operation implements PerformOperation {
                     number.pushNumber(number.dropNumber().invertSign());
                     break;
             }
-
         }
     }
+
 }
