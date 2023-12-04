@@ -20,7 +20,7 @@ public class Execute /* extends StackNumber */{
     }
 
 
-    public void elaboraTextArea() throws Exception{
+    public void elaboraTextArea(){
         if(textArea.contains("sqrt"))
         {
             textArea = textArea.replace("sqrt","√");
@@ -35,8 +35,6 @@ public class Execute /* extends StackNumber */{
         } else if(textArea.matches(regex) ){
             //matches per operazioni: prende text area e la salva come inverso
             Operation.perform(new StringBuilder(textArea).reverse().toString(),this.stack);
-        } else {
-            throw new Exception("Invalid Input");
         }
     }
 }
