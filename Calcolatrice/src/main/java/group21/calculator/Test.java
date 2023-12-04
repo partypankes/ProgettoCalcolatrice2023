@@ -16,17 +16,34 @@ public class Test  {
 
     public static void main(String[] args) throws Exception  {
 
-        // (3 + 6 / 2) -> 3 6 2 + /
-        //             -> 3 3 2 * + -> swap -> 3 2 3 * +  ->  3 3 +  ->  6
-
-        //
 
         //In TextArea viene inserito un valore da GUI:
+//<<<<<<< Updated upstream
         String textArea = "30+5j";
         Execute execute = new Execute("sqrt");
         //stack.pushNumber(ComplexNumber.complexParse("6+5j"));
         //stack.pushNumber(ComplexNumber.complexParse("2+5j"));
         execute.elaboraTextArea();
+//=======
+            /*
+        String [] textArea = new String[5];
+        textArea[0] = "3+2j";
+        textArea[1] = "5";
+        textArea[2] = "4";
+        textArea[3] = "12";
+        textArea[4] = "+";
+        Execute exe = new Execute(textArea[0]);
+        exe.elaboraTextArea();
+        /*
+        for (String s : textArea) {
+            Execute execute = new Execute(s);
+            execute.elaboraTextArea();
+        }
+
+        exe.print();
+                */
+
+//>>>>>>> Stashed changes
 
 
 

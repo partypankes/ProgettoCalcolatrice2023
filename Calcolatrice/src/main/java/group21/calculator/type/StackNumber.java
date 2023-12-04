@@ -75,5 +75,12 @@ public class StackNumber {
 
     }
 
+    public String printStack(){
+        StringBuffer str = new StringBuffer();
+        for(int i = 0; i < this.stack.size(); i++){
+            str.append(stack.get(i).toString());
+        }
+        return str.toString();
+    }
 
 }
