@@ -1,5 +1,6 @@
 package group21.calculator.operation;
 
+import group21.calculator.exceptions.*;
 import group21.calculator.type.ComplexNumber;
 import group21.calculator.type.StackNumber;
 
@@ -16,20 +17,22 @@ public class Variables {
 
 
     public void perform(String str,StackNumber stack) {
-       switch (str.charAt(0)) {
-            case '>':
-                saveVariable(str.charAt(1),stack.peekNumber());
-                break;
-            case '<':
-                stack.pushNumber(getVariable(str.charAt(1)));
-                break;
-            case '+':
-                addValueToVariable(str.charAt(1),stack.peekNumber());
-                break;
-            case '-':
-                subtractValueFromVariable(str.charAt(1),stack.peekNumber());
-                break;
-        }
+            switch (str.charAt(0)) {
+                case '>':
+                    saveVariable(str.charAt(1), stack.peekNumber());
+                    break;
+                case '<':
+                    stack.pushNumber(getVariable(str.charAt(1)));
+                    break;
+                case '+':
+                    addValueToVariable(str.charAt(1), stack.peekNumber());
+                    break;
+                case '-':
+
+                    subtractValueFromVariable(str.charAt(1), stack.peekNumber());
+                    break;
+            }
+
     }
 
     //Inizializza tutte le varibili necessarie sotto forma di chiave-valore (Variabile-ComplexNumbers)
@@ -49,15 +52,22 @@ public class Variables {
            return variables.get(variableName);
     }
 
-    //assegna un valore alla variabile
+    //assegna un valore alla variabile??
     public void addValueToVariable(char variableName, ComplexNumber value){
+        try{
         ComplexNumber currentNumber= getVariable(variableName);
         variables.put(variableName, currentNumber.add(value));
+    } catch (NoValueVariable e) {
+        System.err.println(e.getMessage());
+    }
     }
 
-    public void subtractValueFromVariable(char variableName, ComplexNumber value){
-        ComplexNumber currentNumber = getVariable(variableName);
-        variables.put(variableName, currentNumber.subtract(value));
+    //sottrae un determinato valore ad uno contenuto in una variabile
+
+    public void subtractValueFromVariable(char variableName, ComplexNumber value) {
+            ComplexNumber currentNumber = getVariable(variableName);
+            variables.put(variableName, currentNumber.subtract(value));
+
     }
 
 
