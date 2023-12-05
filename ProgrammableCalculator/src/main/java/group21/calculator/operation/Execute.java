@@ -18,17 +18,17 @@ public class Execute /* extends StackNumber */{
         this.var = new Variables();
     }
 
-
     public StackNumber getStack() {
-        return stack;
+        return this.stack;
     }
 
-    public void elaboraTextArea(String textArea) {
+    public void elaboraTextArea(String textArea) throws InvalidExpressionException{
             if (textArea.contains("sqrt")) {
                 textArea = textArea.replace("sqrt", "√");
             }
-            if (textArea.contains("j") || textArea.matches("\\d+")) {
-                stack.pushNumber(ComplexNumber.complexParse(textArea));
+            //textArea.contains("j") || textArea.matches("\\d+") || textArea.matches("[-]\\d+")|| textArea.matches("\\d+[.].*") || textArea.matches("[-]\\d+[.].*")
+            if (isComplexNumber(textArea)) {
+                this.stack.pushNumber(ComplexNumber.complexParse(textArea));
 
             } else if (textArea.matches(".*[A-Z]1")) {
                 var.perform(textArea, this.stack);
@@ -36,7 +36,14 @@ public class Execute /* extends StackNumber */{
             } else if (textArea.matches(regex)) {
                 //matches per operazioni: prende text area e la salva come inverso
                 Operation.perform(textArea, this.stack);
+            }else{
+                throw new InvalidExpressionException(textArea);
             }
+    }
+
+    public boolean isComplexNumber(String str){
+        String reg = "([-+]?\\d*\\.?\\d+)([-+]\\d*\\.?\\d*j)?";
+        return str.matches(reg) || str.matches("[+-]?\\d+j");
     }
 
     public String print(){

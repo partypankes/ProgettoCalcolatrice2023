@@ -67,21 +67,23 @@ public class ComplexNumber {
     }
 
 
-
-    //Dato un numero complesso scritto in stringa viene trasformato in ComplexNumber
-    //MANCA LA VERIFICA SE è STATO MESSO CORRETTAMENTE UN NUMERO COMPLESSO CON CONSEGUENTE ECCEZIONE
     public static ComplexNumber complexParse(String str) {
-        if(str.contains("j")) {
-            if(str.contains("-")){
-                String[] temp = str.split("[-]|[j]");
-                return new ComplexNumber(Double.parseDouble(temp[0]),-(Double.parseDouble(temp[1])));
-            }
-            String[] temp = str.split("[+]|[j]");
-           return new ComplexNumber(Double.parseDouble(temp[0]),Double.parseDouble(temp[1]));
-        }
-        return new ComplexNumber(Double.parseDouble(str),0);
-    }
 
+        String regex = "([-+]?(?:\\d*\\.?\\d+)?)?([-+]?(?:\\d*\\.?\\d*j)?)";
+
+        String realPart = str.replaceAll(regex, "$1");
+        String imgPart = str.replaceAll(regex, "$2");
+
+        if(imgPart.equals("j")){
+            imgPart = realPart.concat(imgPart);
+            realPart = "";
+        }
+
+        double real = (realPart.isEmpty()) ? 0 : Double.parseDouble(realPart);
+        double img = (imgPart.isEmpty() ? 0 : Double.parseDouble(imgPart.replace("j", "")));
+
+        return new ComplexNumber(real, img);
+    }
 
     @Override
     public String toString() {
@@ -89,9 +91,7 @@ public class ComplexNumber {
         if(imaginary == 0) {
             return String.format("%.2f", real);
         }
-
         return String.format("%.2f%+.2fj", real, imaginary);
-
     }
 
 }

@@ -10,93 +10,64 @@ import group21.calculator.type.StackNumber;
 
 public class Operation {
 
+    public Operation(){}
 
-    public Operation() {
-
-    }
-
-    //altro modo:  char sqrt -> 's', char ± -> 'm'
-
-    public static void perform(String operation, StackNumber number) {
-        for (int i = 0; i < operation.length(); i++) {
-            switch (operation.charAt(i)) {
-                case '+':
-                    /*
-                     * verifica se lo stack è vuoto o contiene un solo operando
-                     *
-                     * */
-                    if (number.getStackSize() == 0) {
-                        throw new StackIsEmptyException();
-                    }
-                    if (number.getStackSize() == 1) {
-                        throw new InsufficientOperandsException();
-                    }
-                    number.pushNumber(number.dropNumber().add(number.dropNumber()));
-                    break;
-                case '-':
-                    /*
-                     * verifica se lo stack è vuoto o contiene un solo operando
-                     *
-                     * */
-                    if (number.getStackSize() == 0) {
-                        throw new StackIsEmptyException();
-                    }
-                    if (number.getStackSize() == 1) {
-                        throw new InsufficientOperandsException();
-                    }
-                    number.swapNumber();
-                    number.pushNumber(number.dropNumber().subtract(number.dropNumber()));
-                    break;
-                case '*':
-                    /*
-                     * verifica se lo stack è vuoto o contiene un solo operando
-                     *
-                     * */
-                    if (number.getStackSize() == 0) {
-                        throw new StackIsEmptyException();
-                    }
-                    if (number.getStackSize() == 1) {
-                        throw new InsufficientOperandsException();
-                    }
-                    number.pushNumber(number.dropNumber().multiply(number.dropNumber()));
-                    break;
-                case '/':
-                    /*
-                     * verifica se lo stack è vuoto o contiene un solo operando
-                     *
-                     * */
-                    if (number.getStackSize() == 0) {
-                        throw new StackIsEmptyException();
-                    }
-                    if (number.getStackSize() == 1) {
-                        throw new InsufficientOperandsException();
-                    }
-                    number.swapNumber();
-                    number.pushNumber(number.dropNumber().divide(number.dropNumber()));
-                    break;
-                case '√':
-                    /*
-                     * verifica se lo stack è vuoto
-                     *
-                     * */
-                    if (number.getStackSize() == 0) {
-                        throw new StackIsEmptyException();
-                    }
-                    number.pushNumber(number.dropNumber().squareRoot());
-                    break;
-                case '±':
-                    /*
-                     * verifica se lo stack è vuoto
-                     *
-                     * */
-                    if (number.getStackSize() == 0) {
-                        throw new StackIsEmptyException();
-                    }
-                    number.pushNumber(number.dropNumber().invertSign());
-                    break;
+    /*perform() all operations by a String of Operators*/
+    public static void perform(String operators, StackNumber numbers) {
+        for (int i = 0; i < operators.length(); i++) {
+            char operator = operators.charAt(i);
+            if (isUnaryOperator(operator)) {
+                if (numbers.getStackSize() == 0) {
+                    throw new StackIsEmptyException();
+                }else if (numbers.getStackSize() == 1) {
+                    throw new InsufficientOperandsException();
+                }else{
+                    performUnaryOperation(operator, numbers);
+                }
+            } else if (isBinaryOperator(operator)) {
+                if (numbers.getStackSize() == 0) {
+                    throw new StackIsEmptyException();
+                }else{
+                    performBinaryOperation(operator, numbers);
+                }
             }
-
-
         }
     }
+
+    /*
+     * Methods for dividing operations
+     */
+    private static boolean isUnaryOperator(char operator){
+        return operator == '√' || operator == '±';
+    }
+    private static boolean isBinaryOperator(char operator){
+        return operator == '+' || operator == '-' || operator == '*' || operator == '/';
+    }
+
+    /*
+    * Perform Operation Methods
+    */
+    private static void performUnaryOperation(char operator, StackNumber stack){
+        if(operator == '√'){
+            stack.pushNumber(stack.dropNumber().squareRoot());
+        } else if(operator == '±'){
+            stack.pushNumber(stack.dropNumber().invertSign());
+        }
+    }
+
+    private static void performBinaryOperation(char operator, StackNumber stack){
+        if(operator == '+'){
+            stack.pushNumber(stack.dropNumber().add(stack.dropNumber()));
+        } else if(operator == '-'){
+            stack.swapNumber();
+            stack.pushNumber(stack.dropNumber().subtract(stack.dropNumber()));
+        } else if(operator == '*'){
+            stack.pushNumber(stack.dropNumber().multiply(stack.dropNumber()));
+        } else if(operator == '/'){
+            stack.swapNumber();
+            stack.pushNumber(stack.dropNumber().divide(stack.dropNumber()));
+        }
+    }
+
+
 }
