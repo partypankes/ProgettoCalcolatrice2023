@@ -17,7 +17,9 @@ public class Execute /* extends StackNumber */{
         this.var = new Variables();
     }
 
-
+    public StackNumber getStack() {
+        return stack;
+    }
 
     public void elaboraTextArea(String textArea) throws Exception{
         if(textArea.contains("sqrt")){

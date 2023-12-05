@@ -1,6 +1,7 @@
 package group21.calculator.operation;
 
 
+import group21.calculator.exceptions.InsufficientOperandsException;
 import group21.calculator.type.StackNumber;
 
 public class Operation {
@@ -11,7 +12,7 @@ public class Operation {
     }
 
     //altro modo:  char sqrt -> 's', char ± -> 'm'
-    public static void perform(String operation,StackNumber number) {
+    public static void perform(String operation,StackNumber number) throws InsufficientOperandsException {
         for (int i = 0; i < operation.length(); i++) {
             switch (operation.charAt(i)) {
                 case '+':

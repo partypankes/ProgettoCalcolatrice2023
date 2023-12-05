@@ -2,12 +2,19 @@ package group21.calculator.gui;
 
 
 import group21.calculator.operation.Execute;
+import group21.calculator.type.ComplexNumber;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /*
 * Da fare:
@@ -70,7 +77,7 @@ public class GuiController {
     private Pane varKeyBoard;
 
     @FXML
-    private ListView<?> StackView;
+    private ListView<String> StackView;
 
     @FXML
     private Button clearTextAreaButton;
@@ -98,6 +105,15 @@ public class GuiController {
         displayArea.setText("");
         System.out.println(exe.print());
     }
+
+    private void stackViewGUI() {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for (int i = 0; i < 1; i++) {
+            items.add(exe.getStack().getNumber(i));
+        }
+        StackView.setItems(items);
+    }
+
 
 
 }
