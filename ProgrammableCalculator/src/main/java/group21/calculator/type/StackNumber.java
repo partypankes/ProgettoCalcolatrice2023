@@ -91,6 +91,10 @@ public class StackNumber {
 
     }
 
+    public String  getNumber(int i) {
+        return stack.get(i).toString();
+    }
+
     public String printStack(){
         StringBuffer str = new StringBuffer();
         for(int i = 0; i < this.stack.size(); i++){

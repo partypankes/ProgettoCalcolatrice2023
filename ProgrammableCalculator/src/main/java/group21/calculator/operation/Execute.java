@@ -19,10 +19,16 @@ public class Execute /* extends StackNumber */{
     }
 
 
+
     public void elaboraTextArea(String textArea) {
             if (textArea.contains("sqrt")) {
                 textArea = textArea.replace("sqrt", "√");
             }
+
+    public StackNumber getStack() {
+        return stack;
+    }
+
 
             if (textArea.contains("j") || textArea.matches("\\d+")) {
                 stack.pushNumber(ComplexNumber.complexParse(textArea));
