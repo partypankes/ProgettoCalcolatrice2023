@@ -29,13 +29,14 @@ public class Execute /* extends StackNumber */{
             //textArea.contains("j") || textArea.matches("\\d+") || textArea.matches("[-]\\d+")|| textArea.matches("\\d+[.].*") || textArea.matches("[-]\\d+[.].*")
             if (isComplexNumber(textArea)) {
                 this.stack.pushNumber(ComplexNumber.complexParse(textArea));
-
-            } else if (textArea.matches(".*[A-Z]1")) {
+                return;
+            } else if (textArea.matches("^[+\\-><]{1}[A-Z]{1}")) {
                 var.perform(textArea, this.stack);
-
+                return;
             } else if (textArea.matches(regex) ) {
                 //matches per operazioni: prende text area e la salva come inverso
                 Operation.perform(textArea, this.stack);
+                return;
             }else{
                 throw new InvalidExpressionException(textArea);
             }

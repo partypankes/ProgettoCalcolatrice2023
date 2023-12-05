@@ -2,21 +2,17 @@ package group21.calculator.gui;
 
 
 import group21.calculator.operation.Execute;
-import group21.calculator.type.ComplexNumber;
-import javafx.beans.binding.Bindings;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.Stack;
 
 /*
 * Da fare:
