@@ -1,4 +1,5 @@
 package group21.calculator.type;
+import group21.calculator.exceptions.InsufficientOperandsException;
 import group21.calculator.type.ComplexNumber;
 
 import java.util.Stack;
@@ -54,10 +55,13 @@ public class StackNumber {
     public boolean isEmpty() { return stack.isEmpty();}
 
     //SWAP: scambia l'elemento nella top dello stack con il penultimo - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack]
-    public void swapNumber(){
+    public void swapNumber() throws InsufficientOperandsException {
 
         ComplexNumber topNumber = dropNumber();
         ComplexNumber secondNumber = dropNumber();
+
+        if(secondNumber == null || topNumber == null)
+            throw new InsufficientOperandsException();
 
         pushNumber(topNumber);
         pushNumber(secondNumber);
@@ -65,10 +69,13 @@ public class StackNumber {
     }
 
     //OVER: pusha una copia del penultimo elemento - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack]
-    public void overNumber(){
+    public void overNumber() throws InsufficientOperandsException{
 
         ComplexNumber topNumber = dropNumber();
         ComplexNumber secondNumber = peekNumber();
+
+        if(secondNumber == null || topNumber == null)
+            throw new InsufficientOperandsException();
 
         pushNumber(topNumber);
         pushNumber(secondNumber);
