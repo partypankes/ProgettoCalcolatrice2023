@@ -23,20 +23,19 @@ public class Test  {
         //stack.pushNumber(ComplexNumber.complexParse("6+5j"));
         //stack.pushNumber(ComplexNumber.complexParse("2+5j"));
         //execute.elaboraTextArea();
-
         String [] textArea = new String[5];
         textArea[0] = "3";
         textArea[1] = "5";
         textArea[2] = "2";
         textArea[3] = "4";
         textArea[4] = "*";
-        Execute exe = new Execute(null);
-
+        Execute exe = new Execute();
+        /*
         for(int i = 0; i< textArea.length; i++){
             exe.setTextArea(textArea[i]);
             exe.elaboraTextArea();
         }
-
+        */
         System.out.println(exe.print());
 
 
