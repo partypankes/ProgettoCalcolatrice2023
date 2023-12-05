@@ -104,4 +104,7 @@ public class StackNumber {
         return str.toString();
     }
 
+    public Stack<ComplexNumber> getStack() {
+        return stack;
+    }
 }
