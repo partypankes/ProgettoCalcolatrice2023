@@ -1,5 +1,8 @@
 package group21.calculator.type;
 
+import group21.calculator.exceptions.DivisionByZeroException;
+import group21.calculator.exceptions.InvalidComplexNumberFormatException;
+
 public class ComplexNumber {
     private double real;
     private double imaginary;
@@ -39,7 +42,7 @@ public class ComplexNumber {
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
 
         if (denominator == 0) {
-            throw new ArithmeticException("Division by zero");
+            throw new DivisionByZeroException();
         }
 
         double newReal = (this.real * other.real + this.imaginary * other.imaginary) / denominator;
@@ -66,6 +69,7 @@ public class ComplexNumber {
 
 
     //Dato un numero complesso scritto in stringa viene trasformato in ComplexNumber
+    //MANCA LA VERIFICA SE è STATO MESSO CORRETTAMENTE UN NUMERO COMPLESSO CON CONSEGUENTE ECCEZIONE
     public static ComplexNumber complexParse(String str) {
         if(str.contains("j")) {
             if(str.contains("-")){

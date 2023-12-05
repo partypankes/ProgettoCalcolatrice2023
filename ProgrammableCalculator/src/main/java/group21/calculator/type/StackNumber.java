@@ -1,5 +1,6 @@
 package group21.calculator.type;
 import group21.calculator.exceptions.InsufficientOperandsException;
+import group21.calculator.exceptions.StackIsEmptyException;
 import group21.calculator.type.ComplexNumber;
 
 import java.util.Stack;
@@ -33,11 +34,17 @@ public class StackNumber {
 
     //legge il valore nella top dello stack
     public ComplexNumber peekNumber(){
+        if (isEmpty()){
+            throw new StackIsEmptyException();
+        }
         return stack.peek();
     }
 
     //DROP: rimuove e ritorna l'elemento top dello stack
     public ComplexNumber dropNumber(){
+        if (isEmpty()){
+            throw new StackIsEmptyException();
+        }
        return stack.pop();
     }
 
@@ -48,14 +55,20 @@ public class StackNumber {
 
     //DUP: legge l'elemento nella top dello stack e pusha una sua copia nello stack
     public void dupNumber(){
+        if (isEmpty()){
+            throw new StackIsEmptyException();
+        }
             pushNumber(peekNumber());
     }
 
     //metodo isEmpty dello stack
     public boolean isEmpty() { return stack.isEmpty();}
 
-    //SWAP: scambia l'elemento nella top dello stack con il penultimo - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack]
+    //SWAP: scambia l'elemento nella top dello stack con il penultimo - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack] le eccezioni sono inclue in drop e peek
     public void swapNumber() {
+        if (getStackSize() < 2) {
+            throw new InsufficientOperandsException();
+        }
 
         ComplexNumber topNumber = dropNumber();
         ComplexNumber secondNumber = dropNumber();
@@ -65,9 +78,11 @@ public class StackNumber {
 
     }
 
-    //OVER: pusha una copia del penultimo elemento - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack]
+    //OVER: pusha una copia del penultimo elemento - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack] le eccezioni sono inclue in drop e peek
     public void overNumber() {
-
+        if (getStackSize() < 2) {
+            throw new InsufficientOperandsException();
+        }
         ComplexNumber topNumber = dropNumber();
         ComplexNumber secondNumber = peekNumber();
 
