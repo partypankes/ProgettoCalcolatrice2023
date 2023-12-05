@@ -65,7 +65,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                group21.calculator.programmablecalculator/group21.calculator.gui.HelloApplication
+                                group21.calculator.programmablecalculator/group21.calculator.gui.GuiApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
