@@ -18,36 +18,26 @@ public class Test  {
 
 
         //In TextArea viene inserito un valore da GUI:
-//<<<<<<< Updated upstream
-        String textArea = "30+5j";
-        Execute execute = new Execute("sqrt");
+        //String textArea = "30+5j";
+        //Execute execute = new Execute("sqrt");
         //stack.pushNumber(ComplexNumber.complexParse("6+5j"));
         //stack.pushNumber(ComplexNumber.complexParse("2+5j"));
-        execute.elaboraTextArea();
-//=======
-            /*
+        //execute.elaboraTextArea();
+
         String [] textArea = new String[5];
-        textArea[0] = "3+2j";
+        textArea[0] = "3";
         textArea[1] = "5";
-        textArea[2] = "4";
-        textArea[3] = "12";
-        textArea[4] = "+";
-        Execute exe = new Execute(textArea[0]);
-        exe.elaboraTextArea();
-        /*
-        for (String s : textArea) {
-            Execute execute = new Execute(s);
-            execute.elaboraTextArea();
+        textArea[2] = "2";
+        textArea[3] = "4";
+        textArea[4] = "*";
+        Execute exe = new Execute(null);
+
+        for(int i = 0; i< textArea.length; i++){
+            exe.setTextArea(textArea[i]);
+            exe.elaboraTextArea();
         }
 
-        exe.print();
-                */
-
-//>>>>>>> Stashed changes
-
-
-
-
+        System.out.println(exe.print());
 
 
     }

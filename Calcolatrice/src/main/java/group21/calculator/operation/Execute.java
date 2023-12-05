@@ -19,13 +19,13 @@ public class Execute /* extends StackNumber */{
         this.var = new Variables();
     }
 
+    public void setTextArea(String a) {
+        this.textArea = a;
+    }
 
-//<<<<<<< Updated upstream
     public void elaboraTextArea() throws Exception{
-        if(textArea.contains("sqrt")){
-            textArea = textArea.replace("sqrt","√");}
-//=======
-//>>>>>>> Stashed changes
+        if(this.textArea.contains("sqrt")){
+            this.textArea = textArea.replace("sqrt","√");}
 
         if(textArea.contains("j") || textArea.matches("\\d+")){
             stack.pushNumber(ComplexNumber.complexParse(textArea));
@@ -35,12 +35,11 @@ public class Execute /* extends StackNumber */{
 
         }  else if(textArea.matches(regex)){
             //matches per operazioni: prende text area e la salva come inverso
-//<<<<<<< Updated upstream
             Operation.perform(this.textArea,this.stack);
         }
     }
 
-    public void print(){
-        stack.printStack();
+    public String print(){
+        return stack.printStack();
     }
 }
