@@ -55,13 +55,10 @@ public class StackNumber {
     public boolean isEmpty() { return stack.isEmpty();}
 
     //SWAP: scambia l'elemento nella top dello stack con il penultimo - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack]
-    public void swapNumber() throws InsufficientOperandsException {
+    public void swapNumber() {
 
         ComplexNumber topNumber = dropNumber();
         ComplexNumber secondNumber = dropNumber();
-
-        if(secondNumber == null || topNumber == null)
-            throw new InsufficientOperandsException();
 
         pushNumber(topNumber);
         pushNumber(secondNumber);
@@ -69,13 +66,10 @@ public class StackNumber {
     }
 
     //OVER: pusha una copia del penultimo elemento - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack]
-    public void overNumber() throws InsufficientOperandsException{
+    public void overNumber() {
 
         ComplexNumber topNumber = dropNumber();
         ComplexNumber secondNumber = peekNumber();
-
-        if(secondNumber == null || topNumber == null)
-            throw new InsufficientOperandsException();
 
         pushNumber(topNumber);
         pushNumber(secondNumber);
