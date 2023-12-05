@@ -1,6 +1,7 @@
 package group21.calculator.gui;
 
 
+import group21.calculator.operation.Execute;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,6 +19,11 @@ import javafx.scene.layout.Pane;
 * */
 public class GuiController {
 
+    private Execute exe;
+
+    public GuiController() {
+        this.exe = new Execute();
+    }
     @FXML
     private Button overButton;
 
@@ -80,6 +86,13 @@ public class GuiController {
     private void aggiungiTesto(TextField textField, String text) {
         textField.appendText(text);
     }
+
+    @FXML
+    private void handleOverButton(ActionEvent event) {
+        
+    }
+
+
 }
 
 

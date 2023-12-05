@@ -323,7 +323,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="overButton" layoutX="486.0" layoutY="270.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="Over">
+            <Button fx:id="overButton" layoutX="486.0" layoutY="270.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleOverButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="Over">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
