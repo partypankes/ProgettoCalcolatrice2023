@@ -89,7 +89,14 @@ public class GuiController {
 
     @FXML
     private void handleOverButton(ActionEvent event) {
-        
+
+    }
+
+    @FXML
+    private void handleExcuteButton(ActionEvent event) throws Exception {
+        exe.elaboraTextArea(displayArea.getText());
+        displayArea.setText("");
+        System.out.println(exe.print());
     }
 
 

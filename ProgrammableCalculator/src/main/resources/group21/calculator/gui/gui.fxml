@@ -343,7 +343,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="exeButton" layoutX="365.0" layoutY="360.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="Execute">
+            <Button fx:id="exeButton" layoutX="365.0" layoutY="360.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleExcuteButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="Execute">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
