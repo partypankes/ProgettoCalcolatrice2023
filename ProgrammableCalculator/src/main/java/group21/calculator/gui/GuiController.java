@@ -8,6 +8,14 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
+/*
+* Da fare:
+* - Bindings tra -> Stack <-> StackView
+*                -> Pane123.. <-> PaneABC..
+*
+* - Button -> TextArea
+* - Button Execute - textProperty of TextArea
+* */
 public class GuiController {
 
     @FXML
