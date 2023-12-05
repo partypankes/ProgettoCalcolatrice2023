@@ -52,7 +52,7 @@ public class Variables {
            return variables.get(variableName);
     }
 
-    //assegna un valore alla variabile??
+    //Da cambiare le exeptiojn
     public void addValueToVariable(char variableName, ComplexNumber value){
         try{
         ComplexNumber currentNumber= getVariable(variableName);

@@ -10,7 +10,7 @@ public class Execute /* extends StackNumber */{
 
     private StackNumber stack;
     private Variables var;
-    private final String regex = ".*[/±*\\-+√].*";
+    private final String regex = "[/±*\\-+√]+";
 
 
     public Execute(){
@@ -33,7 +33,7 @@ public class Execute /* extends StackNumber */{
             } else if (textArea.matches(".*[A-Z]1")) {
                 var.perform(textArea, this.stack);
 
-            } else if (textArea.matches(regex)) {
+            } else if (textArea.matches(regex) ) {
                 //matches per operazioni: prende text area e la salva come inverso
                 Operation.perform(textArea, this.stack);
             }else{

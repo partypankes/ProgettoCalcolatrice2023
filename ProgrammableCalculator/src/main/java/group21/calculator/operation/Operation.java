@@ -17,16 +17,16 @@ public class Operation {
         for (int i = 0; i < operators.length(); i++) {
             char operator = operators.charAt(i);
             if (isUnaryOperator(operator)) {
-                if (numbers.getStackSize() == 0) {
+                if (numbers.isEmpty()) {
                     throw new StackIsEmptyException();
-                }else if (numbers.getStackSize() == 1) {
-                    throw new InsufficientOperandsException();
                 }else{
                     performUnaryOperation(operator, numbers);
                 }
             } else if (isBinaryOperator(operator)) {
-                if (numbers.getStackSize() == 0) {
+                if (numbers.isEmpty()) {
                     throw new StackIsEmptyException();
+                }else if (numbers.getStackSize() == 1) {
+                    throw new InsufficientOperandsException();
                 }else{
                     performBinaryOperation(operator, numbers);
                 }
