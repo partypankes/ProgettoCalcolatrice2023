@@ -6,7 +6,7 @@ import group21.calculator.type.StackNumber;
 import java.util.HashMap;
 import java.util.Map;
 
-public class peròVariables {
+public class Variables {
 
     private final Map<Character, ComplexNumber> variables;
     public Variables(){
