@@ -9,7 +9,7 @@
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField id="displayArea" fx:id="displayArea" layoutX="10.0" layoutY="10.0" prefHeight="105.0" prefWidth="600.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="123...">
+      <TextField id="displayArea" fx:id="displayArea" layoutX="10.0" layoutY="10.0" prefHeight="105.0" prefWidth="600.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="">
          <font>
             <Font name="System Font" size="45.0" />
          </font>
