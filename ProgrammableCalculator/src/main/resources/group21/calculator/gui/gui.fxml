@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.effect.*?>
+
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group21.calculator.gui.GuiController">
@@ -14,7 +12,7 @@
             <Font name="System Font" size="45.0" />
          </font>
       </TextField>
-      <Pane id="numbersView" fx:id="view" layoutX="620.0" layoutY="10.0" prefHeight="540.0" prefWidth="170.0" style="-fx-border-color: black;">
+      <Pane id="numbersView" layoutX="620.0" layoutY="10.0" prefHeight="540.0" prefWidth="170.0" style="-fx-border-color: black;">
          <children>
             <ListView id="numnbersView" fx:id="StackView" prefHeight="560.0" prefWidth="170.0" style="-fx-background-color: lightblue; -fx-border-color: black;" />
             <ListView id="numnbersView" fx:id="VarView" prefHeight="560.0" prefWidth="170.0" style="-fx-background-color: lightblue; -fx-border-color: black;" visible="false" />
@@ -304,7 +302,7 @@
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font></Button>
-            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextArearButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="CE">
+            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextAreaButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="CE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>

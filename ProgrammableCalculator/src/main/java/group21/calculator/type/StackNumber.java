@@ -1,12 +1,11 @@
 package group21.calculator.type;
 import group21.calculator.exceptions.InsufficientOperandsException;
 import group21.calculator.exceptions.StackIsEmptyException;
-import group21.calculator.type.ComplexNumber;
 
 import java.util.Stack;
 
 
-/*Classe dello stack, contenete tutti i metodi dello stack di inserimento e rimozione.
+/*Classedello stack, contenete tutti i metodi dello stack di inserimento e rimozione.
 * Implementa anche tutti i metodi richiesti dallo StackManipulation:
 * clear, -> rimuove tutti gli elementi dallo stack
 * drop, -> elimina il top elemento
@@ -15,7 +14,7 @@ import java.util.Stack;
 * swap -> cambia la posizione degli ultimi due valori*/
 public class StackNumber {
 
-    private Stack<ComplexNumber> stack;
+    private final Stack<ComplexNumber> stack;
 
     //costruttore dello stack
     public StackNumber() {
@@ -106,10 +105,10 @@ public class StackNumber {
         return stack.get(i).toString();
     }
 
-    public String printStack(){
-        StringBuffer str = new StringBuffer();
-        for(int i = 0; i < this.stack.size(); i++){
-            str.append(stack.get(i).toString());
+    /*public String printStack(){
+        StringBuilder str = new StringBuilder();
+        for (ComplexNumber complexNumber : this.stack) {
+            str.append(complexNumber.toString());
             str.append("\n");
         }
         return str.toString();
@@ -118,7 +117,7 @@ public class StackNumber {
 
     public Stack<ComplexNumber> getStack() {
         return stack;
-    }
+    }*/
 
 
 }

@@ -38,6 +38,7 @@ public class Operation {
     private static boolean isUnaryOperator(char operator){
         return operator == '√' || operator == '±';
     }
+
     private static boolean isBinaryOperator(char operator){
         return operator == '+' || operator == '-' || operator == '*' || operator == '/';
     }

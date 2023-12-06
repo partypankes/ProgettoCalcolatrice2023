@@ -8,9 +8,8 @@ import group21.calculator.type.StackNumber;
  ** determinando l'inserimento (numero, operazione,  */
 public class Execute /* extends StackNumber */ {
 
-    private StackNumber stack;
-    private Variables var;
-    private final String regex = "[/±*\\-+√]+";
+    private final StackNumber stack;
+    private final Variables var;
 
 
     public Execute () {
@@ -18,19 +17,24 @@ public class Execute /* extends StackNumber */ {
         this.var = new Variables ();
     }
 
+    public Variables getVar() {
+        return var;
+    }
+
     public StackNumber getStack () {
         return this.stack;
     }
 
-    public void elaboraTextArea (String textArea) throws InvalidExpressionException {
+    public void elaborateTextArea(String textArea) throws InvalidExpressionException {
         if (textArea.contains ("sqrt")) {
             textArea = textArea.replace ("sqrt" , "√");
         }
 
+        String regex = "[/±*\\-+√]+";
         if (isComplexNumber (textArea)) {
             this.stack.pushNumber (ComplexNumber.complexParse (textArea));
 
-        }else if (textArea.matches ("^[+\\-><]{1}[A-Z]{1}$")) {
+        }else if (textArea.matches ("^[+\\-><][A-Z]$")) {
             var.perform (textArea , this.stack);
 
         }else if (textArea.matches (regex)) {
@@ -47,9 +51,8 @@ public class Execute /* extends StackNumber */ {
     }
 
 
-    public String print () {
+    /*public String print () {
         return stack.printStack ();
-    }
-
+    }*/
 
 }

@@ -1,9 +1,9 @@
 package group21.calculator.gui;
 
-
 import group21.calculator.exceptions.*;
 import group21.calculator.operation.Execute;
 
+import group21.calculator.type.ComplexNumber;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -19,31 +19,15 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
-
-/*
-* Da fare:
-* - Bindings tra -> Stack <-> StackView
-*                -> Pane123.. <-> PaneABC..
-*
-* - Button -> TextArea
-* - Button Execute - textProperty of TextArea
-* */
 public class GuiController implements Initializable {
 
     private Execute exe;
 
-    public GuiController() {
-        this.exe = new Execute();
-
-    }
-
-
     @FXML
     private TextField displayArea;
-
-
 
     @FXML
     private Button toNumbersButton;
@@ -51,14 +35,8 @@ public class GuiController implements Initializable {
     @FXML
     private Button toVarButton;
 
-
-
     @FXML
     private Pane mainKeyBoard;
-
-    @FXML
-    private Pane view;
-
 
     @FXML
     private Pane varKeyBoard;
@@ -69,23 +47,90 @@ public class GuiController implements Initializable {
     @FXML
     private ListView<String> VarView;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        this.exe = new Execute();
 
+
+        toVarButton.setOnAction(event -> handleToVarButton());
+        toNumbersButton.setOnAction(event -> handleToNumbersButton());
+        refreshVarView();
+        refreshStackView();
+    }
+
+    private void exceptionToTextArea(String message) {
+        displayArea.clear();
+        displayArea.setText(message);
+
+        mainKeyBoard.setDisable(true);
+
+        // Imposta un'animazione per cancellare il messaggio dopo 5 secondi
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2.5), event -> {
+            displayArea.clear();
+            mainKeyBoard.setDisable(false);
+        }));
+
+        timeline.play();
+        refreshStackView();
+
+    }
+
+
+    private void refreshVarView() {
+        ObservableList<String> varItems = FXCollections.observableArrayList();
+
+        for (Map.Entry<Character, ComplexNumber> entry : exe.getVar().getVariables().entrySet()) {
+            varItems.add(entry.getKey() + ": " + entry.getValue());
+        }
+
+        VarView.setItems(varItems);
+
+    }
+
+    private void refreshStackView() {
+        if (!exe.getStack().isEmpty()) {
+
+            ObservableList<String> items = FXCollections.observableArrayList();
+            int count = exe.getStack().getStackSize();
+
+            for (int i = 0; i < count; i++) {
+                items.add(exe.getStack().getNumber(i));
+            }
+
+            FXCollections.reverse(items);
+
+            StackView.setItems(items);
+
+        } else {
+
+            ObservableList<String> items = FXCollections.observableArrayList();
+            StackView.setItems(items);
+
+        }
+
+    }
+
+    // Funzione per aggiungere il testo alla textfield
+    private void addText(TextField textField, String text) {
+        textField.appendText(text);
+
+    }
 
     @FXML
     private void handleButtonClick(ActionEvent event) {
         if (event.getSource() instanceof Button clickedButton) {
-            aggiungiTesto(displayArea, clickedButton.getText());
+            addText(displayArea, clickedButton.getText());
         }
     }
 
     @FXML
-    private void handleClearStackButton(){
-            exe.getStack().clearNumber();
-            refreshListView();
+    private void handleClearStackButton() {
+        exe.getStack().clearNumber();
+        refreshStackView();
     }
 
     @FXML
-    private void handleClearTextArearButton() {
+    private void handleClearTextAreaButton() {
         displayArea.setText("");
     }
 
@@ -93,77 +138,58 @@ public class GuiController implements Initializable {
     @FXML
     void handleToVarButton() {
         mainKeyBoard.setDisable(true);
-        mainKeyBoard.setVisible(false);
         varKeyBoard.setDisable(false);
+
+        mainKeyBoard.setVisible(false);
         varKeyBoard.setVisible(true);
 
+        StackView.setVisible(false);
+        VarView.setVisible(true);
+
     }
+
+    @FXML
+    private void handleOverButton() {
+        try {
+            exe.getStack().overNumber();
+        } catch (StackIsEmptyException | InsufficientOperandsException ex) {
+            exceptionToTextArea(ex.getMessage());
+            return;
+        }
+
+        refreshStackView();
+
+    }
+
     @FXML
     void handleToNumbersButton() {
         mainKeyBoard.setDisable(false);
-        mainKeyBoard.setVisible(true);
         varKeyBoard.setDisable(true);
+
+        mainKeyBoard.setVisible(true);
         varKeyBoard.setVisible(false);
 
-    }
-    private void exceptionToTextArea(String message) {
-        displayArea.clear();
-        displayArea.setText(message);
-        mainKeyBoard.setDisable(true);
-        // Imposta un'animazione per cancellare il messaggio dopo 5 secondi
-        Timeline timeline = new Timeline(new KeyFrame(
-                Duration.seconds(2.5),
-                event -> {
-                    displayArea.clear();
-                    mainKeyBoard.setDisable(false);
-                }
-        ));
-        timeline.play();
-        refreshListView();
-    }
-    // Funzione per aggiungere il testo alla textfield
-    private void aggiungiTesto(TextField textField, String text) {
-        textField.appendText(text);
+        StackView.setVisible(true);
+        VarView.setVisible(false);
+
     }
 
     @FXML
-    private void handleOverButton(ActionEvent event) {
-        try{
-            exe.getStack().overNumber();
-        } catch (StackIsEmptyException | InsufficientOperandsException ex ) {
-            exceptionToTextArea(ex.getMessage());
-            return;
-        }
-        refreshListView();
-    }
-
-    @FXML
-    private void handleExecuteButton () throws Exception {
+    private void handleExecuteButton() {
         try {
-            exe.elaboraTextArea(displayArea.getText());
+            exe.elaborateTextArea(displayArea.getText());
         } catch (InvalidExpressionException | DivisionByZeroException | InsufficientOperandsException |
-                 NoValueInVariableException | StackIsEmptyException ex ) {
+                 NoValueInVariableException | StackIsEmptyException ex) {
             exceptionToTextArea(ex.getMessage());
             return;
         }
+
         displayArea.setText("");
         //System.out.println(exe.print());
-        refreshListView();
+
+        refreshVarView();
+        refreshStackView();
     }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        mainKeyBoard.setDisable(false);
-        varKeyBoard.setDisable(true);
-        mainKeyBoard.setVisible(true);
-        varKeyBoard.setDisable(false);
-
-        toVarButton.setOnAction(event -> handleToVarButton());
-        toNumbersButton.setOnAction(event -> handleToNumbersButton());
-
-        refreshListView();
-    }
-
 
     @FXML
     private void handleClearValueButton() {
@@ -172,61 +198,44 @@ public class GuiController implements Initializable {
         if (!temp.isEmpty()) {
             // Rimuove l'ultimo carattere dalla stringa
             String newText = temp.substring(0, temp.length() - 1);
+
             displayArea.setText(newText);
         }
-    }
-
-    private void refreshListView() {
-        if(!exe.getStack().isEmpty()){
-            ObservableList<String> items = FXCollections.observableArrayList();
-            int count = exe.getStack().getStackSize();
-
-            for(int i = 0; i<count; i++) {
-                    items.add(exe.getStack().getNumber(i));
-                }
-
-            FXCollections.reverse(items);
-
-            StackView.setItems(items);
-
-        } else {
-            ObservableList<String> items = FXCollections.observableArrayList();
-            StackView.setItems(items);
-        }
 
     }
-
     @FXML
     private void handleDropButton() {
         try {
             exe.getStack().dropNumber();
-        } catch (StackIsEmptyException ex ) {
+        } catch (StackIsEmptyException ex) {
+
             exceptionToTextArea(ex.getMessage());
             return;
         }
-        refreshListView();
+
+        refreshStackView();
     }
 
     @FXML
     private void handleDupButton() {
-        try{
+        try {
             exe.getStack().dupNumber();
-        } catch (StackIsEmptyException ex ) {
+        } catch (StackIsEmptyException ex) {
             exceptionToTextArea(ex.getMessage());
             return;
         }
-        refreshListView();
+        refreshStackView();
     }
 
     @FXML
     private void handleSwapButton() {
-        try{
+        try {
             exe.getStack().swapNumber();
-        } catch (StackIsEmptyException | InsufficientOperandsException ex ) {
+        } catch (StackIsEmptyException | InsufficientOperandsException ex) {
             exceptionToTextArea(ex.getMessage());
             return;
         }
-        refreshListView();
+        refreshStackView();
     }
 
 }
