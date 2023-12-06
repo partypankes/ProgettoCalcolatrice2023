@@ -8,10 +8,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 /*
@@ -22,7 +26,7 @@ import javafx.scene.layout.Pane;
 * - Button -> TextArea
 * - Button Execute - textProperty of TextArea
 * */
-public class GuiController {
+public class GuiController implements Initializable {
 
     private Execute exe;
 
@@ -113,8 +117,8 @@ public class GuiController {
         refreshListView();
     }
 
-
-    public void initialize(){
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         mainKeyBoard.setDisable(false);
         varKeyBoard.setDisable(true);
         mainKeyBoard.setVisible(true);
@@ -125,8 +129,8 @@ public class GuiController {
         toNumbersButton.setOnAction(event -> handleToNumbersButton());
 
         refreshListView();
-
     }
+
 
     @FXML
     private void handleClearValueButton() {

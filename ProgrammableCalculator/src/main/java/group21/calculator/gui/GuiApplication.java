@@ -11,13 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GuiApplication extends Application implements Initializable {
-    @FXML
-    private GuiController stackController;
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        stackController.initialize();
-    }
+public class GuiApplication extends Application  {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GuiApplication.class.getResource("gui.fxml"));
