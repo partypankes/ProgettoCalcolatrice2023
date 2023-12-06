@@ -1,7 +1,7 @@
 package group21.calculator.gui;
 
 
-import group21.calculator.exceptions.InvalidExpressionException;
+import group21.calculator.exceptions.*;
 import group21.calculator.operation.Execute;
 
 import javafx.animation.KeyFrame;
@@ -131,7 +131,8 @@ public class GuiController implements Initializable {
     private void handleExcuteButton() throws Exception {
         try {
             exe.elaboraTextArea(displayArea.getText());
-        } catch (InvalidExpressionException ex) {
+        } catch (InvalidExpressionException | DivisionByZeroException | InsufficientOperandsException |
+                 NoValueInVariableException | StackIsEmptyException ex ) {
             exceptionToTextArea(ex.getMessage());
             return;
         }
