@@ -1,11 +1,7 @@
 package group21.calculator.operation;
 
-
-
-import group21.calculator.exceptions.*;
-
 import group21.calculator.exceptions.InsufficientOperandsException;
-
+import group21.calculator.exceptions.StackIsEmptyException;
 import group21.calculator.type.StackNumber;
 
 public class Operation {
@@ -13,7 +9,7 @@ public class Operation {
     public Operation(){}
 
     /*perform() all operations by a String of Operators*/
-    public static void perform(String operators, StackNumber numbers) {
+    public static void perform(String operators, StackNumber numbers) throws StackIsEmptyException, InsufficientOperandsException{
         for (int i = 0; i < operators.length(); i++) {
             char operator = operators.charAt(i);
             if (isUnaryOperator(operator)) {

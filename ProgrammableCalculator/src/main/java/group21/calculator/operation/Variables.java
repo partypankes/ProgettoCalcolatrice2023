@@ -1,6 +1,8 @@
 package group21.calculator.operation;
 
-import group21.calculator.exceptions.*;
+
+import group21.calculator.exceptions.NoValueInVariableException;
+import group21.calculator.exceptions.StackIsEmptyException;
 import group21.calculator.type.ComplexNumber;
 import group21.calculator.type.StackNumber;
 
@@ -14,61 +16,66 @@ public class Variables {
         variables = new HashMap<>();
     }
 
-
-
-    public void perform(String str,StackNumber stack) {
-            switch (str.charAt(0)) {
-                case '>':
-                    saveVariable(str.charAt(1), stack.peekNumber());
-                    break;
-                case '<':
-                    stack.pushNumber(getVariable(str.charAt(1)));
-                    break;
-                case '+':
-                    addValueToVariable(str.charAt(1), stack.peekNumber());
-                    break;
-                case '-':
-
-                    subtractValueFromVariable(str.charAt(1), stack.peekNumber());
-                    break;
-            }
-
-    }
-
     //Inizializza tutte le varibili necessarie sotto forma di chiave-valore (Variabile-ComplexNumbers)
     private void initializeVariables() {
-        for(char variable= 'A'; variable<='Z'; variable++){
-            variables.put(variable, new ComplexNumber(0,0));
+        for(char var = 'A'; var <= 'Z'; var++){
+            variables.put(var, new ComplexNumber(0,0));
         }
-    }
-
-    //salva il valore della variabile in memoria
-    public void saveVariable(char variableName, ComplexNumber number){
-        variables.put(variableName, number);
     }
 
     //prende la variabile dalla memoria
     public ComplexNumber getVariable(char variableName){
-           return variables.get(variableName);
+        return variables.get(variableName);
     }
 
-    //Da cambiare le exeptiojn
-    public void addValueToVariable(char variableName, ComplexNumber value){
-        try{
-        ComplexNumber currentNumber= getVariable(variableName);
-        variables.put(variableName, currentNumber.add(value));
-    } catch (NoValueVariable e) {
-        System.err.println(e.getMessage());
+    public void perform(String str, StackNumber stack) throws StackIsEmptyException, NoValueInVariableException {
+        char firstChar = str.charAt(0);
+        char secondChar = str.charAt(1);
+
+        if(stack.isEmpty()){
+            throw new StackIsEmptyException();
+
+        }else if(firstChar == '<') {
+                takeVariable(secondChar, stack); //stack is empty
+
+        }else if(hasNoValue(secondChar)) {
+            throw new NoValueInVariableException(secondChar);
+
+        }else if(firstChar == '>') {
+                saveVariable(secondChar, stack.peekNumber()); //no value
+        }else if(firstChar == '+') {
+                addValueToVariable(secondChar, stack.peekNumber()); //entrambe
+        }else if(firstChar == '-') {
+                subtractValueFromVariable(secondChar, stack.peekNumber()); //entrambe
+        }
     }
+
+
+    //salva il valore della variabile in Stack
+    private void saveVariable(char varName, ComplexNumber number){
+        variables.put(varName, number);
+    }
+
+    //take Value to stack and put into Variable
+    private void takeVariable(char varName, StackNumber stack){
+        stack.pushNumber(getVariable(varName));
+    }
+/*
+    //Da cambiare le exeptiojn
+ */
+    private void addValueToVariable(char varName, ComplexNumber value){
+            ComplexNumber currentNumber = getVariable(varName);
+            variables.put(varName, currentNumber.add(value));
     }
 
     //sottrae un determinato valore ad uno contenuto in una variabile
-
-    public void subtractValueFromVariable(char variableName, ComplexNumber value) {
-            ComplexNumber currentNumber = getVariable(variableName);
-            variables.put(variableName, currentNumber.subtract(value));
-
+    private void subtractValueFromVariable(char varName, ComplexNumber value){
+            ComplexNumber currentNumber = getVariable(varName);
+            variables.put(varName, currentNumber.subtract(value));
     }
 
+    private boolean hasNoValue(char varName){
+        return getVariable(varName).equals(new ComplexNumber(0,0));
+    }
 
 }

@@ -1,11 +1,10 @@
 package group21.calculator.type;
 
 import group21.calculator.exceptions.DivisionByZeroException;
-import group21.calculator.exceptions.InvalidComplexNumberFormatException;
 
 public class ComplexNumber {
-    private double real;
-    private double imaginary;
+    private final double real;
+    private final double imaginary;
 
     public ComplexNumber(double real, double imaginary) {
         this.real = real;
@@ -38,17 +37,17 @@ public class ComplexNumber {
     }
 
     //effettua la divisione tra due numeri complessi CORRETTO
-    public ComplexNumber divide(ComplexNumber other) {
+    public ComplexNumber divide(ComplexNumber other) throws DivisionByZeroException{
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
 
         if (denominator == 0) {
             throw new DivisionByZeroException();
+        }else{
+            double newReal = (this.real * other.real + this.imaginary * other.imaginary) / denominator;
+            double newImaginary = (this.imaginary * other.real - this.real * other.imaginary) / denominator;
+
+            return new ComplexNumber(newReal, newImaginary);
         }
-
-        double newReal = (this.real * other.real + this.imaginary * other.imaginary) / denominator;
-        double newImaginary = (this.imaginary * other.real - this.real * other.imaginary) / denominator;
-
-        return new ComplexNumber(newReal, newImaginary);
     }
 
     //effettua la radice quadrata del numero complesso CORRETTO
@@ -63,7 +62,11 @@ public class ComplexNumber {
     }
     //effettua l'inversione di segno CORRETTO
     public ComplexNumber invertSign() {
-        return new ComplexNumber(-this.real, -this.imaginary);
+        if(this.real == 0) {
+            return new ComplexNumber(this.real, -this.imaginary);
+        }else if(this.imaginary == 0) {
+            return new ComplexNumber(-this.real, this.imaginary);
+        }else return new ComplexNumber(-this.real, -this.imaginary);
     }
 
 
