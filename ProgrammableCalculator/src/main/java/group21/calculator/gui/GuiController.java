@@ -1,8 +1,11 @@
 package group21.calculator.gui;
 
 
+import group21.calculator.exceptions.InvalidExpressionException;
 import group21.calculator.operation.Execute;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -111,7 +115,23 @@ public class GuiController implements Initializable {
 
     @FXML
     private void handleExcuteButton() throws Exception {
-        exe.elaboraTextArea(displayArea.getText());
+        try {
+            exe.elaboraTextArea(displayArea.getText());
+        } catch (InvalidExpressionException ex) {
+            displayArea.clear();
+            displayArea.setText(ex.getMessage());
+            mainKeyBoard.setDisable(true);
+            // Imposta un'animazione per cancellare il messaggio dopo 5 secondi
+            Timeline timeline = new Timeline(new KeyFrame(
+                    Duration.seconds(5),
+                    event -> {
+                        displayArea.clear();
+                        mainKeyBoard.setDisable(false);
+                    }
+            ));
+            timeline.play();
+            return;
+        }
         displayArea.setText("");
         System.out.println(exe.print());
         refreshListView();
@@ -123,8 +143,7 @@ public class GuiController implements Initializable {
         varKeyBoard.setDisable(true);
         mainKeyBoard.setVisible(true);
         varKeyBoard.setDisable(false);
-
-
+        
         toVarButton.setOnAction(event -> handleToVarButton());
         toNumbersButton.setOnAction(event -> handleToNumbersButton());
 
