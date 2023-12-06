@@ -19,7 +19,7 @@ public class Variables {
     //Inizializza tutte le varibili necessarie sotto forma di chiave-valore (Variabile-ComplexNumbers)
     private void initializeVariables() {
         for(char var = 'A'; var <= 'Z'; var++){
-            variables.put(var, new ComplexNumber(0,0));
+            variables.put(var, null);
         }
     }
 
@@ -35,14 +35,15 @@ public class Variables {
         if(stack.isEmpty()){
             throw new StackIsEmptyException();
 
-        }else if(firstChar == '<') {
-                takeVariable(secondChar, stack); //stack is empty
+        }else if(firstChar == '>') {
+            pushInVariable(secondChar, stack.peekNumber()); //no value
 
         }else if(hasNoValue(secondChar)) {
             throw new NoValueInVariableException(secondChar);
 
-        }else if(firstChar == '>') {
-                saveVariable(secondChar, stack.peekNumber()); //no value
+        }else if(firstChar == '<') {
+                takeFromVariable(secondChar, stack); //stack is empty
+
         }else if(firstChar == '+') {
                 addValueToVariable(secondChar, stack.peekNumber()); //entrambe
         }else if(firstChar == '-') {
@@ -51,13 +52,13 @@ public class Variables {
     }
 
 
-    //salva il valore della variabile in Stack
-    private void saveVariable(char varName, ComplexNumber number){
+    //mette il valore della variabile in Stack
+    private void pushInVariable(char varName, ComplexNumber number){
         variables.put(varName, number);
     }
 
     //take Value to stack and put into Variable
-    private void takeVariable(char varName, StackNumber stack){
+    private void takeFromVariable(char varName, StackNumber stack){
         stack.pushNumber(getVariable(varName));
     }
 /*
@@ -75,7 +76,7 @@ public class Variables {
     }
 
     private boolean hasNoValue(char varName){
-        return getVariable(varName).equals(new ComplexNumber(0,0));
+        return getVariable(varName) == (null);
     }
 
 }

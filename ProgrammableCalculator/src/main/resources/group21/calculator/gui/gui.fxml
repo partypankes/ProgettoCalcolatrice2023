@@ -16,7 +16,8 @@
       </TextField>
       <Pane id="numbersView" fx:id="view" layoutX="620.0" layoutY="10.0" prefHeight="540.0" prefWidth="170.0" style="-fx-border-color: black;">
          <children>
-            <ListView id="numnbersView" fx:id="StackView" editable="true" prefHeight="560.0" prefWidth="170.0" style="-fx-background-color: lightblue; -fx-border-color: black;" />
+            <ListView id="numnbersView" fx:id="StackView" prefHeight="560.0" prefWidth="170.0" style="-fx-background-color: lightblue; -fx-border-color: black;" />
+            <ListView id="numnbersView" fx:id="VarView" prefHeight="560.0" prefWidth="170.0" style="-fx-background-color: lightblue; -fx-border-color: black;" visible="false" />
          </children></Pane>
       <Pane id="variablesKey" fx:id="varKeyBoard" disable="true" layoutX="10.0" layoutY="125.0" prefHeight="445.0" prefWidth="600.0" visible="false">
          <children>
@@ -343,7 +344,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Button>
-            <Button layoutX="365.0" layoutY="360.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleExcuteButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="Execute">
+            <Button layoutX="365.0" layoutY="360.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleExecuteButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="Execute">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>

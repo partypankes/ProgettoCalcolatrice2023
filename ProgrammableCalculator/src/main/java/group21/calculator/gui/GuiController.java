@@ -66,6 +66,10 @@ public class GuiController implements Initializable {
     @FXML
     private ListView<String> StackView;
 
+    @FXML
+    private ListView<String> VarView;
+
+
 
     @FXML
     private void handleButtonClick(ActionEvent event) {
@@ -108,13 +112,14 @@ public class GuiController implements Initializable {
         mainKeyBoard.setDisable(true);
         // Imposta un'animazione per cancellare il messaggio dopo 5 secondi
         Timeline timeline = new Timeline(new KeyFrame(
-                Duration.seconds(5),
+                Duration.seconds(2.5),
                 event -> {
                     displayArea.clear();
                     mainKeyBoard.setDisable(false);
                 }
         ));
         timeline.play();
+        refreshListView();
     }
     // Funzione per aggiungere il testo alla textfield
     private void aggiungiTesto(TextField textField, String text) {
@@ -123,12 +128,17 @@ public class GuiController implements Initializable {
 
     @FXML
     private void handleOverButton(ActionEvent event) {
-        exe.getStack().overNumber();
+        try{
+            exe.getStack().overNumber();
+        } catch (StackIsEmptyException | InsufficientOperandsException ex ) {
+            exceptionToTextArea(ex.getMessage());
+            return;
+        }
         refreshListView();
     }
 
     @FXML
-    private void handleExcuteButton() throws Exception {
+    private void handleExecuteButton () throws Exception {
         try {
             exe.elaboraTextArea(displayArea.getText());
         } catch (InvalidExpressionException | DivisionByZeroException | InsufficientOperandsException |
@@ -137,7 +147,7 @@ public class GuiController implements Initializable {
             return;
         }
         displayArea.setText("");
-        System.out.println(exe.print());
+        //System.out.println(exe.print());
         refreshListView();
     }
 
@@ -188,19 +198,34 @@ public class GuiController implements Initializable {
 
     @FXML
     private void handleDropButton() {
-        exe.getStack().dropNumber();
+        try {
+            exe.getStack().dropNumber();
+        } catch (StackIsEmptyException ex ) {
+            exceptionToTextArea(ex.getMessage());
+            return;
+        }
         refreshListView();
     }
 
     @FXML
     private void handleDupButton() {
-        exe.getStack().dupNumber();
+        try{
+            exe.getStack().dupNumber();
+        } catch (StackIsEmptyException ex ) {
+            exceptionToTextArea(ex.getMessage());
+            return;
+        }
         refreshListView();
     }
 
     @FXML
     private void handleSwapButton() {
-        exe.getStack().swapNumber();
+        try{
+            exe.getStack().swapNumber();
+        } catch (StackIsEmptyException | InsufficientOperandsException ex ) {
+            exceptionToTextArea(ex.getMessage());
+            return;
+        }
         refreshListView();
     }
 

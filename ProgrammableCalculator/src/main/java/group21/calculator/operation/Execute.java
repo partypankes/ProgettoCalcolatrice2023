@@ -30,7 +30,7 @@ public class Execute /* extends StackNumber */ {
         if (isComplexNumber (textArea)) {
             this.stack.pushNumber (ComplexNumber.complexParse (textArea));
 
-        }else if (textArea.matches ("^[+\\-><]{1}[A-Z]{1}")) {
+        }else if (textArea.matches ("^[+\\-><]{1}[A-Z]{1}$")) {
             var.perform (textArea , this.stack);
 
         }else if (textArea.matches (regex)) {
@@ -46,7 +46,10 @@ public class Execute /* extends StackNumber */ {
         return str.matches (reg) || str.matches ("[+-]?\\d+j");
     }
 
+
     public String print () {
         return stack.printStack ();
     }
+
+
 }

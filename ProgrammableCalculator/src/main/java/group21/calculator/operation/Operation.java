@@ -1,7 +1,9 @@
 package group21.calculator.operation;
 
+import group21.calculator.exceptions.DivisionByZeroException;
 import group21.calculator.exceptions.InsufficientOperandsException;
 import group21.calculator.exceptions.StackIsEmptyException;
+import group21.calculator.type.ComplexNumber;
 import group21.calculator.type.StackNumber;
 
 public class Operation {
@@ -51,7 +53,7 @@ public class Operation {
         }
     }
 
-    private static void performBinaryOperation(char operator, StackNumber stack){
+    private static void performBinaryOperation(char operator, StackNumber stack) throws DivisionByZeroException{
         if(operator == '+'){
             stack.pushNumber(stack.dropNumber().add(stack.dropNumber()));
         } else if(operator == '-'){
@@ -60,8 +62,16 @@ public class Operation {
         } else if(operator == '*'){
             stack.pushNumber(stack.dropNumber().multiply(stack.dropNumber()));
         } else if(operator == '/'){
+            ComplexNumber denominator = stack.peekNumber();
             stack.swapNumber();
-            stack.pushNumber(stack.dropNumber().divide(stack.dropNumber()));
+
+            double sum = (denominator.getReal() * denominator.getReal()) + (denominator.getImaginary() * denominator.getImaginary());
+            if(sum == 0){
+                stack.swapNumber();
+                throw new DivisionByZeroException();
+            }else{
+                stack.pushNumber(stack.dropNumber().divide(stack.dropNumber()));
+            }
         }
     }
 

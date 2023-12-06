@@ -27,25 +27,32 @@ public class StackNumber {
         return stack.size();
     }
 
+    //metodo isEmpty dello stack
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
+
     //Pusha il numero nello StackNumber
     public void pushNumber(ComplexNumber number){
         stack.push(number);
     }
 
     //legge il valore nella top dello stack
-    public ComplexNumber peekNumber(){
+    public ComplexNumber peekNumber() throws StackIsEmptyException{
         if (isEmpty()){
             throw new StackIsEmptyException();
+        }else{
+            return stack.peek ();
         }
-        return stack.peek();
     }
 
     //DROP: rimuove e ritorna l'elemento top dello stack
-    public ComplexNumber dropNumber(){
-        if (isEmpty()){
+    public ComplexNumber dropNumber() throws StackIsEmptyException{
+        if(isEmpty()){
             throw new StackIsEmptyException();
+        }else{
+            return stack.pop();
         }
-       return stack.pop();
     }
 
     //CLEAR: cancella il contenuto dello stack
@@ -54,44 +61,48 @@ public class StackNumber {
     }
 
     //DUP: legge l'elemento nella top dello stack e pusha una sua copia nello stack
-    public void dupNumber(){
+    public void dupNumber() throws StackIsEmptyException{
         if (isEmpty()){
             throw new StackIsEmptyException();
-        }
+        }else{
             pushNumber(peekNumber());
+        }
+
     }
 
-    //metodo isEmpty dello stack
-    public boolean isEmpty() { return stack.isEmpty();}
+
 
     //SWAP: scambia l'elemento nella top dello stack con il penultimo - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack] le eccezioni sono inclue in drop e peek
-    public void swapNumber() {
-        if (getStackSize() < 2) {
+    public void swapNumber() throws StackIsEmptyException, InsufficientOperandsException{
+        if(stack.isEmpty()){
+            throw new StackIsEmptyException ();
+        }else if (getStackSize() < 2) {
             throw new InsufficientOperandsException();
+        } else {
+            ComplexNumber topNumber = dropNumber();
+            ComplexNumber secondNumber = dropNumber();
+
+            pushNumber(topNumber);
+            pushNumber(secondNumber);
         }
-
-        ComplexNumber topNumber = dropNumber();
-        ComplexNumber secondNumber = dropNumber();
-
-        pushNumber(topNumber);
-        pushNumber(secondNumber);
-
     }
 
     //OVER: pusha una copia del penultimo elemento - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack] le eccezioni sono inclue in drop e peek
-    public void overNumber() {
-        if (getStackSize() < 2) {
+    public void overNumber() throws StackIsEmptyException, InsufficientOperandsException{
+        if (stack.isEmpty()){
+            throw new StackIsEmptyException ();
+        }else if (getStackSize() < 2) {
             throw new InsufficientOperandsException();
+        }else {
+            ComplexNumber topNumber = dropNumber();
+            ComplexNumber secondNumber = peekNumber();
+
+            pushNumber(topNumber);
+            pushNumber(secondNumber);
         }
-        ComplexNumber topNumber = dropNumber();
-        ComplexNumber secondNumber = peekNumber();
-
-        pushNumber(topNumber);
-        pushNumber(secondNumber);
-
     }
 
-    public String  getNumber(int i) {
+    public String getNumber(int i) {
         return stack.get(i).toString();
     }
 
@@ -104,7 +115,10 @@ public class StackNumber {
         return str.toString();
     }
 
+
     public Stack<ComplexNumber> getStack() {
         return stack;
     }
+
+
 }
