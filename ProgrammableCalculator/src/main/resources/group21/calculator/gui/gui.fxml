@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -162,6 +160,7 @@
                   <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="100.0" valignment="CENTER" />
                   <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="100.0" valignment="CENTER" />
                   <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="100.0" valignment="CENTER" />
+
                </rowConstraints>
             </GridPane>
             <Button layoutX="486.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearValueButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: #a19c8c; -fx-border-radius: 20; -fx-background-radius: 20;" text="C" textAlignment="CENTER" textFill="#322f29">
@@ -189,7 +188,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Button>
-         </children>
+            </children>
       </Pane>
       <Pane id="keyboard" fx:id="mainKeyBoard" layoutX="10.0" layoutY="125.0" prefHeight="445.0" prefWidth="600.0">
          <children>
@@ -303,9 +302,9 @@
             <Button layoutY="360.0" minHeight="50.0" minWidth="105.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="85.0" prefWidth="175.0" style="-fx-background-color: #322f29; -fx-background-radius: 150; -fx-border-radius: 150;" text="0" textFill="#ffe5bc">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
-               </font></Button>
-            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextAreaButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="CE">
-            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextArearButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: #a19c8c; -fx-background-radius: 20; -fx-border-radius: 20;" text="CE" textFill="#322f29">
+               </font>
+            </Button>
+            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextAreaButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: #a19c8c; -fx-background-radius: 20; -fx-border-radius: 20;" text="CE" textFill="#322f29">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -357,5 +356,6 @@
             </Button>
          </children>
       </Pane>
+
    </children>
 </AnchorPane>
