@@ -39,47 +39,62 @@ public class Variables {
         char firstChar = str.charAt(0);
         char secondChar = str.charAt(1);
 
-        if(stack.isEmpty()){
-            throw new StackIsEmptyException();
+        if(firstChar == '<') {
+            takeFromVariable (secondChar , stack);
 
         }else if(firstChar == '>') {
-            pushInVariable(secondChar, stack.peekNumber()); //no value
-
-        }else if(hasNoValue(secondChar)) {
-            throw new NoValueInVariableException(secondChar);
-
-        }else if(firstChar == '<') {
-                takeFromVariable(secondChar, stack); //stack is empty
+            pushInVariable(secondChar, stack.peekNumber(), stack.isEmpty());
 
         }else if(firstChar == '+') {
-                addValueToVariable(secondChar, stack.peekNumber()); //entrambe
+            addValueToVariable(secondChar, stack.peekNumber(), stack.isEmpty ());
+
         }else if(firstChar == '-') {
-                subtractValueFromVariable(secondChar, stack.peekNumber()); //entrambe
+            subtractValueFromVariable(secondChar, stack.peekNumber(), stack.isEmpty ());
         }
     }
 
 
     //mette il valore della variabile in Stack
-    private void pushInVariable(char varName, ComplexNumber number){
-        variables.put(varName, number);
+    private void pushInVariable(char varName, ComplexNumber number, boolean isStackEmpty) throws StackIsEmptyException{
+        if(isStackEmpty){
+            throw new StackIsEmptyException ();
+        }else{
+            variables.put(varName, number);
+        }
     }
 
     //take Value to stack and put into Variable
-    private void takeFromVariable(char varName, StackNumber stack){
-        stack.pushNumber(getVariable(varName));
+    private void takeFromVariable(char varName, StackNumber stack) throws NoValueInVariableException{
+        if(hasNoValue(varName)){
+            throw new NoValueInVariableException(varName);
+        }else{
+            stack.pushNumber(getVariable(varName));
+        }
     }
 /*
     //Da cambiare le exeptiojn
  */
-    private void addValueToVariable(char varName, ComplexNumber value){
+    private void addValueToVariable(char varName, ComplexNumber value, boolean isStackEmpty) throws StackIsEmptyException, NoValueInVariableException{
+        if(isStackEmpty){
+            throw new StackIsEmptyException ();
+        }else if(hasNoValue(varName)){
+            throw new NoValueInVariableException (varName);
+        }else{
             ComplexNumber currentNumber = getVariable(varName);
             variables.put(varName, currentNumber.add(value));
+        }
     }
 
     //sottrae un determinato valore ad uno contenuto in una variabile
-    private void subtractValueFromVariable(char varName, ComplexNumber value){
-            ComplexNumber currentNumber = getVariable(varName);
-            variables.put(varName, currentNumber.subtract(value));
+    private void subtractValueFromVariable(char varName, ComplexNumber value, boolean isStackEmpty){
+        if(isStackEmpty){
+            throw new StackIsEmptyException ();
+        }else if(hasNoValue(varName)){
+            throw new NoValueInVariableException (varName);
+        }else{
+            ComplexNumber currentNumber = getVariable (varName);
+            variables.put (varName , currentNumber.subtract (value));
+        }
     }
 
     private boolean hasNoValue(char varName){

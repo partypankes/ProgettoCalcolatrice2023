@@ -259,27 +259,27 @@
                   </Button>
                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="±" textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="2">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="/" textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="3">
+                  <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="/" textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="3">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                        <Font size="35.0" />
                      </font>
                   </Button>
                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="-" textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                        <Font name="System Font" size="40.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="*" textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="*" textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                        <Font size="40.0" />
                      </font>
                   </Button>
                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="+" textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                        <Font size="35.0" />
                      </font>
                   </Button>
                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #322f29; -fx-background-radius: 150; -fx-border-radius: 150;" text="1" textAlignment="CENTER" textFill="#ffe5bc" textOverrun="CLIP" GridPane.rowIndex="3">
@@ -287,9 +287,9 @@
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" ellipsisString="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="." textAlignment="CENTER" textFill="#393939" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <Button alignment="TOP_CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #e3a02d; -fx-background-radius: 150; -fx-border-radius: 150;" text="." textAlignment="CENTER" textFill="#393939" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                        <Font name="System Bold" size="36.0" />
                      </font>
                   </Button>
                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: #322f29; -fx-background-radius: 150; -fx-border-radius: 150;" text="j" textAlignment="CENTER" textFill="#ffe5bc" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="4">
