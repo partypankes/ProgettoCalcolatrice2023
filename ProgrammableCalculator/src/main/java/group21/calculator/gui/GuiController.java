@@ -94,6 +94,7 @@ public class GuiController implements Initializable {
         varKeyBoard.setVisible(true);
 
     }
+    @FXML
     void handleToNumbersButton() {
         mainKeyBoard.setDisable(false);
         mainKeyBoard.setVisible(true);
@@ -101,7 +102,20 @@ public class GuiController implements Initializable {
         varKeyBoard.setVisible(false);
 
     }
-
+    private void exceptionToTextArea(String message) {
+        displayArea.clear();
+        displayArea.setText(message);
+        mainKeyBoard.setDisable(true);
+        // Imposta un'animazione per cancellare il messaggio dopo 5 secondi
+        Timeline timeline = new Timeline(new KeyFrame(
+                Duration.seconds(5),
+                event -> {
+                    displayArea.clear();
+                    mainKeyBoard.setDisable(false);
+                }
+        ));
+        timeline.play();
+    }
     // Funzione per aggiungere il testo alla textfield
     private void aggiungiTesto(TextField textField, String text) {
         textField.appendText(text);
@@ -118,18 +132,7 @@ public class GuiController implements Initializable {
         try {
             exe.elaboraTextArea(displayArea.getText());
         } catch (InvalidExpressionException ex) {
-            displayArea.clear();
-            displayArea.setText(ex.getMessage());
-            mainKeyBoard.setDisable(true);
-            // Imposta un'animazione per cancellare il messaggio dopo 5 secondi
-            Timeline timeline = new Timeline(new KeyFrame(
-                    Duration.seconds(5),
-                    event -> {
-                        displayArea.clear();
-                        mainKeyBoard.setDisable(false);
-                    }
-            ));
-            timeline.play();
+            exceptionToTextArea(ex.getMessage());
             return;
         }
         displayArea.setText("");
@@ -143,7 +146,7 @@ public class GuiController implements Initializable {
         varKeyBoard.setDisable(true);
         mainKeyBoard.setVisible(true);
         varKeyBoard.setDisable(false);
-        
+
         toVarButton.setOnAction(event -> handleToVarButton());
         toNumbersButton.setOnAction(event -> handleToNumbersButton());
 
