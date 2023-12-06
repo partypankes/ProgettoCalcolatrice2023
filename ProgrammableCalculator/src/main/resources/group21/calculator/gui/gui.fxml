@@ -304,8 +304,7 @@
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font></Button>
-            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextAreaButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="CE">
-            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextArearButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: #a19c8c; -fx-background-radius: 20; -fx-border-radius: 20;" text="CE" textFill="#322f29">
+            <Button layoutX="365.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#handleClearTextAreaButton" prefHeight="85.0" prefWidth="114.0" style="-fx-background-color: #a19c8c; -fx-background-radius: 20; -fx-border-radius: 20;" text="CE" textFill="#322f29">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
