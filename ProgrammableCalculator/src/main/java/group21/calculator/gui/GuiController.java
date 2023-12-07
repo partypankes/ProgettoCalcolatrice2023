@@ -123,20 +123,27 @@ public class GuiController implements Initializable {
         }
     }
 
-    @FXML
-    private void handleClearStackButton() {
-        exe.getStack().clearNumber();
-        refreshStackView();
-    }
 
     @FXML
     private void handleClearTextAreaButton() {
         displayArea.setText("");
     }
 
+    @FXML
+    private void handleClearValueButton() {
+        String temp = displayArea.getText();
+
+        if (!temp.isEmpty()) {
+            // Rimuove l'ultimo carattere dalla stringa
+            String newText = temp.substring(0, temp.length() - 1);
+
+            displayArea.setText(newText);
+        }
+
+    }
 
     @FXML
-    void handleToVarButton() {
+    private void handleToVarButton() {
         mainKeyBoard.setDisable(true);
         varKeyBoard.setDisable(false);
 
@@ -148,21 +155,9 @@ public class GuiController implements Initializable {
 
     }
 
-    @FXML
-    private void handleOverButton() {
-        try {
-            exe.getStack().overNumber();
-        } catch (StackIsEmptyException | InsufficientOperandsException ex) {
-            exceptionToTextArea(ex.getMessage());
-            return;
-        }
-
-        refreshStackView();
-
-    }
 
     @FXML
-    void handleToNumbersButton() {
+    private void handleToNumbersButton() {
         mainKeyBoard.setDisable(false);
         varKeyBoard.setDisable(true);
 
@@ -192,17 +187,24 @@ public class GuiController implements Initializable {
     }
 
     @FXML
-    private void handleClearValueButton() {
-        String temp = displayArea.getText();
+    private void handleClearStackButton() {
+        exe.getStack().clearNumber();
+        refreshStackView();
+    }
 
-        if (!temp.isEmpty()) {
-            // Rimuove l'ultimo carattere dalla stringa
-            String newText = temp.substring(0, temp.length() - 1);
-
-            displayArea.setText(newText);
+    @FXML
+    private void handleOverButton() {
+        try {
+            exe.getStack().overNumber();
+        } catch (StackIsEmptyException | InsufficientOperandsException ex) {
+            exceptionToTextArea(ex.getMessage());
+            return;
         }
 
+        refreshStackView();
+
     }
+
     @FXML
     private void handleDropButton() {
         try {

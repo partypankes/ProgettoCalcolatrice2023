@@ -23,7 +23,7 @@ public class Variables {
 
 
     //prende la variabile dalla memoria
-    public ComplexNumber getVariable(char variableName){
+    public ComplexNumber searchVariable(char variableName){
         return variables.get(variableName);
     }
 
@@ -60,7 +60,7 @@ public class Variables {
         if(hasNoValue(varName)){
             throw new NoValueInVariableException(varName);
         }else{
-            stack.pushNumber(getVariable(varName));
+            stack.pushNumber(searchVariable(varName));
         }
     }
 /*
@@ -72,7 +72,7 @@ public class Variables {
         }else if(hasNoValue(varName)){
             throw new NoValueInVariableException (varName);
         }else{
-            ComplexNumber currentNumber = getVariable(varName);
+            ComplexNumber currentNumber = searchVariable(varName);
             variables.put(varName, currentNumber.add(value));
         }
     }
@@ -84,13 +84,13 @@ public class Variables {
         }else if(hasNoValue(varName)){
             throw new NoValueInVariableException (varName);
         }else{
-            ComplexNumber currentNumber = getVariable (varName);
+            ComplexNumber currentNumber = searchVariable(varName);
             variables.put (varName , currentNumber.subtract (value));
         }
     }
 
     private boolean hasNoValue(char varName){
-        return getVariable(varName) == (null);
+        return searchVariable(varName) == (null);
     }
 
 }
