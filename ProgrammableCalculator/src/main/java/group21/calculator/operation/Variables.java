@@ -89,6 +89,22 @@ public class Variables {
         }
     }
 
+    private void multiplyValueToValue(char varName, ComplexNumber value, boolean isStackEmpty){
+
+    }
+
+    private void divideValueFromValue(char varName, ComplexNumber value, boolean isStackEmpty){
+
+    }
+
+    private void makeSqrtOfVariable(char varName){
+
+    }
+
+    private void makeInvertSignOfVariable(char varName){
+
+    }
+
     private boolean hasNoValue(char varName){
         return searchVariable(varName) == (null);
     }
