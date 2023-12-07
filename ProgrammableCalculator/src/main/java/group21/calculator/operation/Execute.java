@@ -14,7 +14,7 @@ public class Execute /* extends StackNumber */ {
 
     public Execute () {
         this.stack = new StackNumber ();
-        this.var = new Variables ();
+        this.var = new Variables();
     }
 
     public Variables getVar() {

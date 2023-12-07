@@ -14,21 +14,13 @@ public class Variables {
     private final Map<Character, ComplexNumber> variables;
 
     public Variables(){
-
         variables = new HashMap<>();
-
     }
 
     public Map<Character, ComplexNumber> getVariables() {
         return variables;
     }
 
-    /*//Inizializza tutte le varibili necessarie sotto forma di chiave-valore (Variabile-ComplexNumbers)
-    private void initializeVariables() {
-        for(char var = 'A'; var <= 'Z'; var++){
-            variables.put(var, null);
-        }
-    }*/
 
     //prende la variabile dalla memoria
     public ComplexNumber getVariable(char variableName){
