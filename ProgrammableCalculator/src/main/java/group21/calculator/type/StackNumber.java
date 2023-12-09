@@ -112,6 +112,7 @@ public class StackNumber {
             str.append("\n");
         }
         return str.toString();
+
     }
 
 
