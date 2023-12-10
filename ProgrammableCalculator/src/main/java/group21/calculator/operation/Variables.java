@@ -1,6 +1,7 @@
 package group21.calculator.operation;
 
 
+import group21.calculator.exceptions.DivisionByZeroException;
 import group21.calculator.exceptions.NoValueInVariableException;
 import group21.calculator.exceptions.StackIsEmptyException;
 import group21.calculator.type.ComplexNumber;
@@ -42,7 +43,17 @@ public class Variables {
 
         }else if(firstChar == '-') {
             subtractValueFromVariable(secondChar, stack.peekNumber(), stack.isEmpty ());
+
+        }else if(firstChar == '*') {
+            multiplyValueToValue(secondChar,stack.peekNumber(), stack.isEmpty());
+        }else if(firstChar == '/') {
+            divideValueFromValue(secondChar, stack.peekNumber(), stack.isEmpty ());
+        }else if(firstChar == '√') {
+            makeSqrtOfVariable(secondChar);
+        }else if(firstChar == '±') {
+            makeInvertSignOfVariable(secondChar);
         }
+
     }
 
 
@@ -66,7 +77,7 @@ public class Variables {
 /*
     //Da cambiare le exeptiojn
  */
-    private void addValueToVariable(char varName, ComplexNumber value, boolean isStackEmpty) throws StackIsEmptyException, NoValueInVariableException{
+    private void addValueToVariable(char varName, ComplexNumber value, boolean isStackEmpty) {
         if(isStackEmpty){
             throw new StackIsEmptyException ();
         }else if(hasNoValue(varName)){
@@ -90,19 +101,49 @@ public class Variables {
     }
 
     private void multiplyValueToValue(char varName, ComplexNumber value, boolean isStackEmpty){
-
+        if(isStackEmpty){
+            throw new StackIsEmptyException ();
+        }else if(hasNoValue(varName)){
+            throw new NoValueInVariableException (varName);
+        }else{
+            ComplexNumber currentNumber = searchVariable(varName);
+            variables.put (varName , currentNumber.multiply(value));
+        }
     }
 
     private void divideValueFromValue(char varName, ComplexNumber value, boolean isStackEmpty){
 
+        double sum = (value.getReal() * value.getReal()) + (value.getImaginary() * value.getImaginary());
+
+        if(sum == 0) {
+            throw new DivisionByZeroException();
+        }else if(isStackEmpty){
+            throw new StackIsEmptyException ();
+        }else if(hasNoValue(varName)){
+            throw new NoValueInVariableException (varName);
+        }else{
+            ComplexNumber currentNumber = searchVariable(varName);
+            variables.put (varName , currentNumber.divide(value));
+        }
+
     }
 
     private void makeSqrtOfVariable(char varName){
-
+        if(hasNoValue(varName)){
+                throw new NoValueInVariableException (varName);
+        }else{
+                ComplexNumber currentNumber = searchVariable(varName);
+                variables.put (varName , currentNumber.squareRoot());
+        }
     }
 
     private void makeInvertSignOfVariable(char varName){
-
+        if(hasNoValue(varName)){
+            throw new NoValueInVariableException (varName);
+        }else{
+            ComplexNumber currentNumber = searchVariable(varName);
+            variables.put (varName , currentNumber.invertSign());
+        }
     }
 
     private boolean hasNoValue(char varName){

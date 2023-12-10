@@ -34,7 +34,7 @@ public class Execute /* extends StackNumber */ {
         if (isComplexNumber (textArea)) {
             this.stack.pushNumber (ComplexNumber.complexParse (textArea));
 
-        }else if (textArea.matches ("^[+\\-><][A-Z]$")) {
+        }else if (textArea.matches ("^[/±*\\-+√><][A-Z]$")) {
             var.perform (textArea , this.stack);
 
         }else if (textArea.matches (regex)) {
