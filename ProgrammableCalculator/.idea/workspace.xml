@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/SimIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/OperationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/StackNumberTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/ComplexNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/ComplexNumberTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -79,7 +78,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="ComplexNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OperationTest.perform" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
         <pattern>
@@ -88,29 +87,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="group21.calculator.test" />
-      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ComplexNumberTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ComplexNumberTest.complexParse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgrammableCalculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="group21.calculator.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="group21.calculator.test" />
-      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ComplexNumberTest" />
-      <option name="METHOD_NAME" value="complexParse" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.OperationTest" />
+      <option name="METHOD_NAME" value="perform" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ComplexNumberTest.divide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OperationTest.testPerformUnaryCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
         <pattern>
@@ -119,14 +103,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="group21.calculator.test" />
-      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ComplexNumberTest" />
-      <option name="METHOD_NAME" value="divide" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.OperationTest" />
+      <option name="METHOD_NAME" value="testPerformUnaryCase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ComplexNumberTest.squareRoot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StackNumberTest.dupNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
         <pattern>
@@ -135,14 +119,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="group21.calculator.test" />
-      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ComplexNumberTest" />
-      <option name="METHOD_NAME" value="squareRoot" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.StackNumberTest" />
+      <option name="METHOD_NAME" value="dupNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ComplexNumberTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StackNumberTest.getNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
         <pattern>
@@ -151,8 +135,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="group21.calculator.test" />
-      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ComplexNumberTest" />
-      <option name="METHOD_NAME" value="testToString" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.StackNumberTest" />
+      <option name="METHOD_NAME" value="getNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StackNumberTest.swapNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammableCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="group21.calculator.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="group21.calculator.test" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.StackNumberTest" />
+      <option name="METHOD_NAME" value="swapNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ComplexNumberTest.testToString" />
-        <item itemvalue="JUnit.ComplexNumberTest.complexParse" />
-        <item itemvalue="JUnit.ComplexNumberTest" />
-        <item itemvalue="JUnit.ComplexNumberTest.squareRoot" />
-        <item itemvalue="JUnit.ComplexNumberTest.divide" />
+        <item itemvalue="JUnit.OperationTest.testPerformUnaryCase" />
+        <item itemvalue="JUnit.OperationTest.perform" />
+        <item itemvalue="JUnit.StackNumberTest.getNumber" />
+        <item itemvalue="JUnit.StackNumberTest.swapNumber" />
+        <item itemvalue="JUnit.StackNumberTest.dupNumber" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +187,7 @@
       <workItem from="1702210063247" duration="35000" />
       <workItem from="1702224027111" duration="2457000" />
       <workItem from="1702226763954" duration="4465000" />
-      <workItem from="1702231381247" duration="3786000" />
+      <workItem from="1702231381247" duration="9007000" />
     </task>
     <servers />
   </component>
