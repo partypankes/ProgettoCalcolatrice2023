@@ -46,12 +46,16 @@ public class Variables {
 
         }else if(firstChar == '*') {
             multiplyValueToValue(secondChar,stack.peekNumber(), stack.isEmpty());
+
         }else if(firstChar == '/') {
             divideValueFromValue(secondChar, stack.peekNumber(), stack.isEmpty ());
+
         }else if(firstChar == '√') {
             makeSqrtOfVariable(secondChar);
+
         }else if(firstChar == '±') {
             makeInvertSignOfVariable(secondChar);
+
         }
 
     }

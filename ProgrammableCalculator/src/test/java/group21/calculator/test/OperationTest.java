@@ -28,6 +28,7 @@ class OperationTest {
         operators = "√±";
         Operation.perform(operators,numbers);
         assertEquals(-3,numbers.peekNumber().getReal());
+        assertEquals(0,numbers.peekNumber().getImaginary());
 
     }
 
