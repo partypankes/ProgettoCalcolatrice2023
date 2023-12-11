@@ -47,7 +47,7 @@ public class Execute /* extends StackNumber */ {
 
     public boolean isComplexNumber (String str) {
         String reg = "([-+]?\\d*\\.?\\d+)([-+]\\d*\\.?\\d*j)?";
-        return str.matches (reg) || str.matches ("[+-]?\\d+j");
+        return str.matches (reg) || str.matches ("[+-]?(\\d+)?j");
     }
 
 
