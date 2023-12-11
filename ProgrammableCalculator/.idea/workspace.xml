@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/OperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/OperationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/StackNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/StackNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/ComplexNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/ComplexNumberTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,34 +51,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "TestingThings",
-    "last_opened_file_path": "D:/Informatica/ProgettoCalcolatrice/ProgettoCalcolatrice2023/ProgrammableCalculator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TestingThings&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Informatica/ProgettoCalcolatrice/ProgettoCalcolatrice2023/ProgrammableCalculator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nello De Luca\Desktop\ProgettoCalcolatrice2023\ProgrammableCalculator\src\main\resources\images" />
+      <recent name="C:\Users\Nello De Luca\Desktop\ProgettoCalcolatrice2023\ProgrammableCalculator\src\main\resources" />
+      <recent name="C:\Users\Nello De Luca\Desktop\ProgettoCalcolatrice2023\ProgrammableCalculator\src\main\resources\group21\calculator\gui" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="group21.calculator.test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OperationTest.testPerformUnaryCase">
+  <component name="RunManager">
     <configuration name="ComplexNumberTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
