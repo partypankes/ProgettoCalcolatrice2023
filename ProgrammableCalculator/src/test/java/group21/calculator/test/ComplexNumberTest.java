@@ -138,8 +138,8 @@ class ComplexNumberTest {
 
     @Test
     void testComplexParse5() {
-        ComplexNumber n = ComplexNumber.complexParse("-4j");
-        assertTrue(n.getReal() == 0 && n.getImaginary() == -4);
+        ComplexNumber n = ComplexNumber.complexParse("+j");
+        assertTrue(n.getReal() == 0 && n.getImaginary() == 1);
     }
 
     @Test

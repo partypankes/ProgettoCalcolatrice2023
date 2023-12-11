@@ -68,18 +68,22 @@ public class ComplexNumber {
 
     public static ComplexNumber complexParse(String str) {
 
-        String regex = "([-+]?(?:\\d*\\.?\\d+)?)?([-+]?(?:\\d*\\.?\\d*j)?)";
+        //String regex = "([-+]?(?:\\d*\\.?(\\d+)??)?([-+]?(?:\\d*\\.?(\\d+)?j)?))"; //2j
+        String regex = "([-+]?(?:\\d*\\.?\\d+)?)?([-+]?(?:\\d*\\.?\\d+j)?)";
 
-        String realPart = str.replaceAll(regex, "$1");
-        String imgPart = str.replaceAll(regex, "$2");
-
-        if(imgPart.equals("j")){
-            imgPart = realPart.concat(imgPart);
+        String realPart = str.replaceAll(regex, "$1"); //2j
+        String imgPart = str.replaceAll(regex, "$2"); // j
+        
+        if(realPart.contains("j")){
+            if(realPart.matches("[-+]?j")){
+                realPart = realPart.replace("j", "1");
+            }
+            imgPart = realPart;
             realPart = "";
         }
 
         double real = (realPart.isEmpty()) ? 0 : Double.parseDouble(realPart);
-        double img = (imgPart.isEmpty() ? 0 : Double.parseDouble(imgPart.replace("j", "")));
+        double img = (imgPart.isEmpty()) ? 0 : Double.parseDouble(imgPart.replace("j", ""));
 
         return new ComplexNumber(real, img);
     }

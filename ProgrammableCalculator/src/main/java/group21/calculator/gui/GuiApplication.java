@@ -16,7 +16,9 @@ public class GuiApplication extends Application  {
         FXMLLoader fxmlLoader = new FXMLLoader(GuiApplication.class.getResource("gui.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("ProgrammableCalculator");
+
         stage.getIcons().add(new Image("https://cdn0.iconfinder.com/data/icons/font-awesome-solid-vol-1/512/calculator-512.png"));
+
         stage.setScene(scene);
         stage.show();
     }

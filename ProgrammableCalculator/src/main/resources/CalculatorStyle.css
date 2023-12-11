@@ -1,0 +1,39 @@
+.display{
+    -fx-background-color: #a19c8c;
+    -fx-focus-traversable: false;
+
+}
+
+.stackView .list-cell{
+    -fx-min-height: 46.6px;
+    -fx-focus-traversable: false;
+}
+.list-view .list-cell:odd{
+    -fx-background-color: #a19c8c
+}
+.list-view .list-cell:odd:filled {
+    -fx-background-color: derive(#a19c8c, -10%);
+}
+.list-view .list-cell:even {
+    -fx-background-color: #a19c8c;
+}
+.list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #a19c8c;
+}
+/* parte fissa della barra*/
+.list-view .scroll-bar:vertical .track {
+    -fx-background-color: derive(#a19c8c, -10%);
+}
+
+#numView {
+    -fx-background-color: #a19c8c;
+    -fx-focus-traversable: false;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+}
+#varView {
+    -fx-background-color: #a19c8c;
+    -fx-focus-traversable: false;
+    -fx-font-family: System;
+    -fx-font-size: 20px;
+}
