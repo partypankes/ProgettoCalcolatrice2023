@@ -2,6 +2,8 @@ package group21.calculator.type;
 
 import group21.calculator.exceptions.DivisionByZeroException;
 
+import java.util.Objects;
+
 public class ComplexNumber {
     private final double real;
     private final double imaginary;
@@ -37,7 +39,7 @@ public class ComplexNumber {
     }
 
     //effettua la divisione tra due numeri complessi CORRETTO
-    public ComplexNumber divide(ComplexNumber other) throws DivisionByZeroException{
+    public ComplexNumber divide(ComplexNumber other) {
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
 
         double newReal = (this.real * other.real + this.imaginary * other.imaginary) / denominator;
@@ -96,5 +98,14 @@ public class ComplexNumber {
         }
         return String.format("%.2f%+.2fj", real, imaginary);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ComplexNumber that = (ComplexNumber) o;
+        return Double.compare(real, that.real) == 0 && Double.compare(imaginary, that.imaginary) == 0;
+    }
+
 
 }

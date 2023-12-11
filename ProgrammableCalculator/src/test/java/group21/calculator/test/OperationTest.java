@@ -12,11 +12,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class OperationTest {
     StackNumber numbers;
     String operators;
+    ComplexNumber n1;
+    ComplexNumber n2;
     @BeforeEach
     void setUp() {
         numbers = new StackNumber();
-        numbers.pushNumber(new ComplexNumber(5,4));
-        numbers.pushNumber(new ComplexNumber(9,0));
+        n1 = new ComplexNumber(5,4);
+        n2 = new ComplexNumber(9,0);
+        numbers.pushNumber(n1);
+        numbers.pushNumber(n2);
     }
 
     @AfterEach
@@ -29,19 +33,45 @@ class OperationTest {
     @Test
     void testPerformUnaryCase() {
         operators = "√±";
+        ComplexNumber temp = n2.squareRoot().invertSign();
         Operation.perform(operators,numbers);
-        assertEquals(-3,numbers.peekNumber().getReal());
-        assertEquals(0,numbers.peekNumber().getImaginary());
+        assertEquals(temp,numbers.peekNumber());
 
     }
 
     @Test
-    void testPerformBinaryCase() {
-        /*operators = "√±";
+    void testPerformBinaryCase0() {
+        operators = "+";
+        ComplexNumber temp = n1.add(n2);
         Operation.perform(operators,numbers);
-        assertEquals(-3,numbers.peekNumber().getReal());
-        assertEquals(0,numbers.peekNumber().getImaginary());
-        */
+        assertEquals(temp,numbers.peekNumber());
+
+    }
+
+    @Test
+    void testPerformBinaryCase1() {
+        operators = "-";
+        ComplexNumber temp = n1.subtract(n2);
+        Operation.perform(operators,numbers);
+        assertEquals(temp,numbers.peekNumber());
+
+    }
+
+    @Test
+    void testPerformBinaryCase2() {
+        operators = "*";
+        ComplexNumber temp = n1.multiply(n2);
+        Operation.perform(operators,numbers);
+        assertEquals(temp,numbers.peekNumber());
+
+    }
+
+    @Test
+    void testPerformBinaryCase3() {
+        operators = "/";
+        ComplexNumber temp = n1.divide(n2);
+        Operation.perform(operators,numbers);
+        assertEquals(temp,numbers.peekNumber());
 
     }
 
