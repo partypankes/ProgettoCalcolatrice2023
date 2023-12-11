@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/icon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/ComplexNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/ComplexNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/OperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/OperationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/StackNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/StackNumberTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +85,7 @@
       <recent name="group21.calculator.test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.StackNumberTest.testGetNumber">
     <configuration name="ComplexNumberTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
@@ -166,10 +168,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OperationTest.testPerformUnaryCase" />
         <item itemvalue="JUnit.StackNumberTest.testGetNumber" />
-        <item itemvalue="JUnit.StackNumberTest.testDropNumber" />
         <item itemvalue="JUnit.ComplexNumberTest.testToString" />
+        <item itemvalue="JUnit.OperationTest.testPerformUnaryCase" />
+        <item itemvalue="JUnit.StackNumberTest.testDropNumber" />
         <item itemvalue="JUnit.OperationTest.perform" />
       </list>
     </recent_temporary>
@@ -195,6 +197,7 @@
       <workItem from="1702226763954" duration="4465000" />
       <workItem from="1702231381247" duration="9007000" />
       <workItem from="1702242611647" duration="774000" />
+      <workItem from="1702307366411" duration="1218000" />
     </task>
     <servers />
   </component>

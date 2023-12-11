@@ -148,6 +148,9 @@ class ComplexNumberTest {
         assertTrue(n.getReal() == 3 && n.getImaginary() == 0);
     }
 
+    /**
+     * Test of toString method, of class ComplexNumber.
+     */
     @Test
     void testToString() {
         SimIO simIO = new SimIO();

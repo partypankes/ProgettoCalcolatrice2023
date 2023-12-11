@@ -23,12 +23,25 @@ class OperationTest {
     void tearDown() {
     }
 
+    /**
+     * Test of perform method, of class Operation.
+     */
     @Test
     void testPerformUnaryCase() {
         operators = "√±";
         Operation.perform(operators,numbers);
         assertEquals(-3,numbers.peekNumber().getReal());
         assertEquals(0,numbers.peekNumber().getImaginary());
+
+    }
+
+    @Test
+    void testPerformBinaryCase() {
+        /*operators = "√±";
+        Operation.perform(operators,numbers);
+        assertEquals(-3,numbers.peekNumber().getReal());
+        assertEquals(0,numbers.peekNumber().getImaginary());
+        */
 
     }
 

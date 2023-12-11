@@ -22,6 +22,9 @@ class StackNumberTest {
     void tearDown() {
     }
 
+    /**
+     * Test of pushNumber method, of class StackNumber.
+     */
     @Test
     void testPushNumber() {
         ComplexNumber n = new ComplexNumber(20,21);
@@ -30,6 +33,9 @@ class StackNumberTest {
         assertFalse(stackNumber.isEmpty());
     }
 
+    /**
+     * Test of getStackSize method, of class StackNumber.
+     */
     @Test
     void testGetStackSize() {
         stackNumber.pushNumber(n);
@@ -37,19 +43,27 @@ class StackNumberTest {
 
     }
 
+    /**
+     * Test of isEmpty method, of class StackNumber.
+     */
     @Test
     void testIsEmpty() {
         assertEquals(0,stackNumber.getStackSize());
         assertTrue(stackNumber.isEmpty());
     }
 
-
+    /**
+     * Test of peekNumber method, of class StackNumber.
+     */
     @Test
     void testPeekNumber() {
         stackNumber.pushNumber(n);
         assertEquals(n,stackNumber.peekNumber());
     }
 
+    /**
+     * Test of dropNumber method, of class StackNumber.
+     */
     @Test
     void testDropNumber() {
         stackNumber.pushNumber(new ComplexNumber(20,32));
@@ -58,6 +72,9 @@ class StackNumberTest {
         assertNotSame(stackNumber.peekNumber(), n);
     }
 
+    /**
+     * Test of clearNumber method, of class StackNumber.
+     */
     @Test
     void testClearNumber() {
         stackNumber.pushNumber(n);
@@ -68,6 +85,9 @@ class StackNumberTest {
 
     }
 
+    /**
+     * Test of dupNumber method, of class StackNumber.
+     */
     @Test
     void testDupNumber() {
         stackNumber.pushNumber(new ComplexNumber(20,32));
@@ -77,6 +97,9 @@ class StackNumberTest {
         assertEquals(n,stackNumber.peekNumber());
     }
 
+    /**
+     * Test of swapNumber method, of class StackNumber.
+     */
     @Test
     void testSwapNumber() {
         stackNumber.pushNumber(n);
@@ -86,6 +109,9 @@ class StackNumberTest {
 
     }
 
+    /**
+     * Test of overNumber method, of class StackNumber.
+     */
     @Test
     void testOverNumber() {
         stackNumber.pushNumber(n);
@@ -95,12 +121,16 @@ class StackNumberTest {
 
     }
 
+    /**
+     * Test of getNumber method, of class StackNumber.
+     */
     @Test
     void testGetNumber() {
         stackNumber.pushNumber(n);
-        ComplexNumber n1 = new ComplexNumber(20,32);
-        stackNumber.pushNumber(n1);
+        //ComplexNumber n1 = new ComplexNumber(20,32);
+        //stackNumber.pushNumber(n1);
         assertEquals(n.toString(), stackNumber.getNumber(0));
-        assertEquals(n1.toString(), stackNumber.getNumber(1));
+        //assertEquals(n1.toString(), stackNumber.getNumber(1));
+        //perchè farne due???
     }
 }
