@@ -1,8 +1,17 @@
+.display .mainBoard .varBoard .stackView{
+}
+
+/*
+TextArea display
+*/
 .display{
     -fx-background-color: #a19c8c;
     -fx-focus-traversable: false;
 }
 
+/*
+StackView: numView + varView
+*/
 .stackView .list-cell{
     -fx-min-height: 46.6px;
     -fx-focus-traversable: false;
@@ -54,3 +63,49 @@
     -fx-background-color: #a19c8c;
 }
 
+/*
+mainBoard with numbers, commands and operator
+*/
+.mainBoard{
+    -fx-background-color: transparent;
+}
+
+#numButton{
+    -fx-background-radius: 150;
+    -fx-border-radius: 150;
+    -fx-background-color: #322f29;
+    -fx-text-fill: #ffe5bc;
+}
+#operatorButton{
+    -fx-background-radius: 150;
+    -fx-border-radius: 150;
+    -fx-background-color: #e3a02d;
+    -fx-text-fill: #393939;
+}
+#commandButton{
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-background-color: #a19c8c;
+    -fx-text-fill: #322f29;
+}
+
+/*
+varBoard with variables (letters)
+*/
+.varBoard{
+    -fx-background-color: transparent;
+}
+
+.varGrid .button{
+    -fx-alignment: center;
+    -fx-background-radius: 150;
+    -fx-border-radius: 150;
+    -fx-background-color: #322f29;
+    -fx-text-fill: #ffe5bc;
+}
+#zedButton{
+    -fx-background-radius: 150;
+    -fx-border-radius: 150;
+    -fx-background-color: #322f29;
+    -fx-text-fill: #ffe5bc;
+}
