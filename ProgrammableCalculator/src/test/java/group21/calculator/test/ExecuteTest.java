@@ -26,6 +26,7 @@ class ExecuteTest {
      */
     @Test
     void testGetVar() {
+        System.out.println("Testing getVar");
         assertNotNull(exe.getVar());
     }
 
@@ -34,6 +35,7 @@ class ExecuteTest {
      */
     @Test
     void testGetStack() {
+        System.out.println("Testing getStack");
         assertNotNull(exe.getStack());
     }
 
@@ -42,6 +44,7 @@ class ExecuteTest {
      */
     @Test
     void testElaborateTextArea1() {
+        System.out.println("Testing elaborateTextArea, case 1");
         String str = "14+22j";
         exe.elaborateTextArea(str);
         ComplexNumber out = exe.getStack().peekNumber();
@@ -50,6 +53,7 @@ class ExecuteTest {
 
     @Test
     void testElaborateTextArea2() {
+        System.out.println("Testing elaborateTextArea, case 2");
         String str = "+";
         exe.elaborateTextArea(str);
         ComplexNumber sum = n1.add(n2);
@@ -60,6 +64,7 @@ class ExecuteTest {
 
     @Test
     void testElaborateTextArea3() {
+        System.out.println("Testing elaborateTextArea, case 3");
         String str = ">A";
         exe.elaborateTextArea(str);
         ComplexNumber out = exe.getVar().searchVariable(str.charAt(1));

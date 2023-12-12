@@ -24,12 +24,13 @@ class VariablesTest {
 
     @Test
     void testGetVariables() {
-        /*Comm cazz o test stu metodo?*/
+        System.out.println("Testing getVariables");
         assertNotNull(variables.getVariables());
     }
 
     @Test
     void testSearchVariable() {
+        System.out.println("Testing searchVariable");
         char tempchar = 'A';
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         variables.getVariables().put(tempchar,tempnumber);
@@ -39,6 +40,7 @@ class VariablesTest {
 
     @Test
     void testPerform1() {
+        System.out.println("Testing perform, case 1");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -47,6 +49,7 @@ class VariablesTest {
 
     @Test
     void testPerform2() {
+        System.out.println("Testing perform, case 2");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.getVariables().put('A',tempnumber);
@@ -55,6 +58,7 @@ class VariablesTest {
     }
     @Test
     void testPerform3() {
+        System.out.println("Testing perform, case 3");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -64,6 +68,7 @@ class VariablesTest {
 
     @Test
     void testPerform4() {
+        System.out.println("Testing perform, case 4");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -73,6 +78,7 @@ class VariablesTest {
 
     @Test
     void testPerform5() {
+        System.out.println("Testing perform, case 5");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -82,6 +88,7 @@ class VariablesTest {
 
     @Test
     void testPerform6() {
+        System.out.println("Testing perform, case 6");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -91,6 +98,7 @@ class VariablesTest {
 
     @Test
     void testPerform7() {
+        System.out.println("Testing perform, case 7");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -100,6 +108,7 @@ class VariablesTest {
 
     @Test
     void testPerform8() {
+        System.out.println("Testing perform, case 8");
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);

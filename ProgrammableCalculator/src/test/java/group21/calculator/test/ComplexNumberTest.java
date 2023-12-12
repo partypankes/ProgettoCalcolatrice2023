@@ -49,6 +49,7 @@ class ComplexNumberTest {
      */
     @Test
     void testAdd() {
+        System.out.println("Testing add");
         ComplexNumber n = new ComplexNumber(3,4);
         ComplexNumber out = n.add(other);
         assertTrue(out.getReal() == 5 && out.getImaginary() == 7);
@@ -59,6 +60,7 @@ class ComplexNumberTest {
      */
     @Test
     void testSubtract() {
+        System.out.println("Testing subtract");
         ComplexNumber n = new ComplexNumber(3,4);
         ComplexNumber out = n.subtract(other);
         assertTrue(out.getReal() == 1 && out.getImaginary() == 1);
@@ -69,6 +71,7 @@ class ComplexNumberTest {
      */
     @Test
     void testMultiply() {
+        System.out.println("Testing multiply");
         ComplexNumber n = new ComplexNumber(3,4);
         ComplexNumber out = n.multiply(other);
         assertTrue(out.getReal() == -6 && out.getImaginary() == 17);
@@ -78,6 +81,7 @@ class ComplexNumberTest {
      */
     @Test
     void testDivide() {
+        System.out.println("Testing divide");
         ComplexNumber n = new ComplexNumber(12,3);
         ComplexNumber out = n.divide(new ComplexNumber(3,1));
         assertTrue(out.getReal() == 3.9 && out.getImaginary() == -0.3);
@@ -88,6 +92,7 @@ class ComplexNumberTest {
      */
     @Test
     void testSquareRoot() {
+        System.out.println("Testing squareRoot");
         ComplexNumber n = new ComplexNumber(3,4);
         ComplexNumber out = n.squareRoot();
         assertTrue(out.getReal() == 2 && out.getImaginary() == 1);
@@ -98,6 +103,7 @@ class ComplexNumberTest {
      */
     @Test
     void testInvertSign() {
+        System.out.println("Testing invertSign");
         ComplexNumber n = new ComplexNumber(3,-4);
         ComplexNumber out = n.invertSign();
         assertTrue(out.getReal() == -3 && out.getImaginary() == 4);
@@ -107,43 +113,50 @@ class ComplexNumberTest {
      * Test of complexParse method, of class ComplexNumber.
      */
     @Test
-    void testComplexParse0() {
+    void testComplexParse1() {
+        System.out.println("Testing complexParse, case 1");
         ComplexNumber n = ComplexNumber.complexParse("3+4j");
         assertTrue(n.getReal() == 3 && n.getImaginary() == 4);
     }
 
     @Test
-    void testComplexParse1() {
+    void testComplexParse2() {
+        System.out.println("Testing complexParse, case 2");
         ComplexNumber n = ComplexNumber.complexParse("-3+4j");
         assertTrue(n.getReal() == -3 && n.getImaginary() == 4);
     }
 
     @Test
-    void testComplexParse2() {
+    void testComplexParse3() {
+        System.out.println("Testing complexParse, case 3");
         ComplexNumber n = ComplexNumber.complexParse("3-4j");
         assertTrue(n.getReal() == 3 && n.getImaginary() == -4);
     }
 
     @Test
-    void testComplexParse3() {
+    void testComplexParse4() {
+        System.out.println("Testing complexParse, case 4");
         ComplexNumber n = ComplexNumber.complexParse("0+4j");
         assertTrue(n.getReal() == 0 && n.getImaginary() == 4);
     }
 
     @Test
-    void testComplexParse4() {
+    void testComplexParse5() {
+        System.out.println("Testing complexParse, case 5");
         ComplexNumber n = ComplexNumber.complexParse("3");
         assertTrue(n.getReal() == 3 && n.getImaginary() == 0);
     }
 
     @Test
-    void testComplexParse5() {
+    void testComplexParse6() {
+        System.out.println("Testing complexParse, case 6");
         ComplexNumber n = ComplexNumber.complexParse("+j");
         assertTrue(n.getReal() == 0 && n.getImaginary() == 1);
     }
 
     @Test
-    void testComplexParse6() {
+    void testComplexParse7() {
+        System.out.println("Testing complexParse, case 7");
         ComplexNumber n = ComplexNumber.complexParse("3+0j");// -3+4j, -3-4j, -3 , 4j, -4j, 0+4j
         assertTrue(n.getReal() == 3 && n.getImaginary() == 0);
     }
@@ -153,6 +166,7 @@ class ComplexNumberTest {
      */
     @Test
     void testToString() {
+        System.out.println("Testing toString");
         SimIO simIO = new SimIO();
         simIO.captureOutput();
         System.out.println(other);

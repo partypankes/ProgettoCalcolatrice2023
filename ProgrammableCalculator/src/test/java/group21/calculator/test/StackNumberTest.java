@@ -30,6 +30,7 @@ class StackNumberTest {
      */
     @Test
     void testPushNumber() {
+        System.out.println("Testing pushNumber");
         ComplexNumber n = new ComplexNumber(20,21);
         stackNumber.pushNumber(n);
         assertFalse(stackNumber.isEmpty());
@@ -42,6 +43,7 @@ class StackNumberTest {
      */
     @Test
     void testGetStackSize() {
+        System.out.println("Testing getStackSize");
         stackNumber.pushNumber(n);
         assertEquals(1,stackNumber.getStackSize());
 
@@ -52,6 +54,7 @@ class StackNumberTest {
      */
     @Test
     void testIsEmpty() {
+        System.out.println("Testing isEmpty");
         assertEquals(0,stackNumber.getStackSize());
         assertTrue(stackNumber.isEmpty());
     }
@@ -61,6 +64,7 @@ class StackNumberTest {
      */
     @Test
     void testPeekNumber() {
+        System.out.println("Testing peekNumber");
         stackNumber.pushNumber(n);
         assertEquals(n,stackNumber.peekNumber());
     }
@@ -70,6 +74,7 @@ class StackNumberTest {
      */
     @Test
     void testDropNumber() {
+        System.out.println("Testing dropNumber");
         stackNumber.pushNumber(new ComplexNumber(20,32));
         stackNumber.pushNumber(n);
         stackNumber.dropNumber();
@@ -81,6 +86,7 @@ class StackNumberTest {
      */
     @Test
     void testClearNumber() {
+        System.out.println("Testing clearNumber");
         stackNumber.pushNumber(n);
         stackNumber.pushNumber(new ComplexNumber(20,32));
         stackNumber.pushNumber(new ComplexNumber(24,25.4));
@@ -94,6 +100,7 @@ class StackNumberTest {
      */
     @Test
     void testDupNumber() {
+        System.out.println("Testing dupNumber");
         stackNumber.pushNumber(new ComplexNumber(20,32));
         stackNumber.pushNumber(n);
         stackNumber.dupNumber();
@@ -106,6 +113,7 @@ class StackNumberTest {
      */
     @Test
     void testSwapNumber() {
+        System.out.println("Testing swapNumber");
         stackNumber.pushNumber(n);
         stackNumber.pushNumber(new ComplexNumber(20,32));
         stackNumber.swapNumber();
@@ -118,6 +126,7 @@ class StackNumberTest {
      */
     @Test
     void testOverNumber() {
+        System.out.println("Testing overNumber");
         stackNumber.pushNumber(n);
         stackNumber.pushNumber(new ComplexNumber(20,32));
         stackNumber.overNumber();
@@ -130,12 +139,10 @@ class StackNumberTest {
      */
     @Test
     void testGetNumber() {
+        System.out.println("Testing getNumber");
         stackNumber.pushNumber(n);
-        //ComplexNumber n1 = new ComplexNumber(20,32);
-        //stackNumber.pushNumber(n1);
         assertEquals(n.toString(), stackNumber.getNumber(0));
-        //assertEquals(n1.toString(), stackNumber.getNumber(1));
-        //perchè farne due???
+
     }
 
 

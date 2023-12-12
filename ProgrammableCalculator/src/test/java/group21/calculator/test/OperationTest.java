@@ -32,6 +32,7 @@ class OperationTest {
      */
     @Test
     void testPerformUnaryCase() {
+        System.out.println("Testing perform, unary case");
         operators = "√±";
         ComplexNumber temp = n2.squareRoot().invertSign();
         Operation.perform(operators,numbers);
@@ -40,7 +41,8 @@ class OperationTest {
     }
 
     @Test
-    void testPerformBinaryCase0() {
+    void testPerformBinaryCase1() {
+        System.out.println("Testing perform, binary case 1");
         operators = "+";
         ComplexNumber temp = n1.add(n2);
         Operation.perform(operators,numbers);
@@ -49,7 +51,8 @@ class OperationTest {
     }
 
     @Test
-    void testPerformBinaryCase1() {
+    void testPerformBinaryCase2() {
+        System.out.println("Testing perform, binary case 2");
         operators = "-";
         ComplexNumber temp = n1.subtract(n2);
         Operation.perform(operators,numbers);
@@ -58,7 +61,8 @@ class OperationTest {
     }
 
     @Test
-    void testPerformBinaryCase2() {
+    void testPerformBinaryCase3() {
+        System.out.println("Testing perform, binary case 3");
         operators = "*";
         ComplexNumber temp = n1.multiply(n2);
         Operation.perform(operators,numbers);
@@ -67,7 +71,8 @@ class OperationTest {
     }
 
     @Test
-    void testPerformBinaryCase3() {
+    void testPerformBinaryCase4() {
+        System.out.println("Testing perform, binary case 4");
         operators = "/";
         ComplexNumber temp = n1.divide(n2);
         Operation.perform(operators,numbers);
