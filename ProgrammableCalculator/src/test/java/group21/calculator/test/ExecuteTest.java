@@ -21,41 +21,49 @@ class ExecuteTest {
         exe.getStack().pushNumber(n2);
     }
 
+    /**
+     * Test of getVar method, of class Execute.
+     */
     @Test
     void testGetVar() {
         assertNotNull(exe.getVar());
     }
 
+    /**
+     * Test of getStack method, of class Execute.
+     */
     @Test
     void testGetStack() {
         assertNotNull(exe.getStack());
     }
 
-    @Test
-    void testElaborateTextArea0() {
-        String tempstring = "10+20j";
-        exe.elaborateTextArea(tempstring);
-        ComplexNumber tempnumber = ComplexNumber.complexParse(tempstring);
-        assertNotNull(exe.getStack().peekNumber());
-        assertEquals(tempnumber,exe.getStack().peekNumber());
-
-    }
-
+    /**
+     * Test of elaborateTextArea method, of class Execute.
+     */
     @Test
     void testElaborateTextArea1() {
-        String tempstring = "+";
-        exe.elaborateTextArea(tempstring);
-        ComplexNumber tempnumber = n1.add(n2);
-        assertNotNull(exe.getStack().peekNumber());
-        assertEquals(tempnumber,exe.getStack().peekNumber());
-
+        String str = "14+22j";
+        exe.elaborateTextArea(str);
+        ComplexNumber out = exe.getStack().peekNumber();
+        assertEquals(out,n2);
     }
 
     @Test
     void testElaborateTextArea2() {
-        String tempstring = ">A";
-        exe.elaborateTextArea(tempstring);
-        assertEquals(exe.getVar().searchVariable(tempstring.charAt(1)), exe.getStack().peekNumber());
+        String str = "+";
+        exe.elaborateTextArea(str);
+        ComplexNumber sum = n1.add(n2);
+        ComplexNumber out = exe.getStack().peekNumber();
+        assertEquals(out,sum);
+
+    }
+
+    @Test
+    void testElaborateTextArea3() {
+        String str = ">A";
+        exe.elaborateTextArea(str);
+        ComplexNumber out = exe.getVar().searchVariable(str.charAt(1));
+        assertEquals(out, n2);
 
     }
 }
