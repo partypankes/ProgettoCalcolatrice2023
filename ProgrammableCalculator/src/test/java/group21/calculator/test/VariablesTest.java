@@ -38,7 +38,7 @@ class VariablesTest {
     }
 
     @Test
-    void testPerform0() {
+    void testPerform1() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -46,7 +46,7 @@ class VariablesTest {
     }
 
     @Test
-    void testPerform1() {
+    void testPerform2() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.getVariables().put('A',tempnumber);
@@ -54,7 +54,7 @@ class VariablesTest {
         assertEquals(variables.searchVariable('A'),numbers.peekNumber());
     }
     @Test
-    void testPerform2() {
+    void testPerform3() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -63,7 +63,7 @@ class VariablesTest {
     }
 
     @Test
-    void testPerform3() {
+    void testPerform4() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -72,7 +72,7 @@ class VariablesTest {
     }
 
     @Test
-    void testPerform4() {
+    void testPerform5() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -81,7 +81,7 @@ class VariablesTest {
     }
 
     @Test
-    void testPerform5() {
+    void testPerform6() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -90,7 +90,7 @@ class VariablesTest {
     }
 
     @Test
-    void testPerform6() {
+    void testPerform7() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
@@ -99,7 +99,7 @@ class VariablesTest {
     }
 
     @Test
-    void testPerform7() {
+    void testPerform8() {
         ComplexNumber tempnumber = new ComplexNumber(10,20);
         numbers.pushNumber(tempnumber);
         variables.perform(">A",numbers);
