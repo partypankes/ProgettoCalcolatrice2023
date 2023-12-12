@@ -30,7 +30,6 @@ class StackNumberTest {
      */
     @Test
     void testPushNumber() {
-        ComplexNumber n = new ComplexNumber(20,21);
         stackNumber.pushNumber(n);
         assertFalse(stackNumber.isEmpty());
         assertEquals(n, stackNumber.peekNumber());
