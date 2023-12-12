@@ -100,7 +100,7 @@ public class Variables {
             throw new NoValueInVariableException (varName);
         }else{
             ComplexNumber currentNumber = searchVariable(varName);
-            variables.put (varName , currentNumber.subtract (value));
+            variables.put (varName , currentNumber.subtract(value));
         }
     }
 
