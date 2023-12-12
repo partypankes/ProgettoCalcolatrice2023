@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/StackNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/StackNumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/group21/calculator/test/VariablesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/group21/calculator/test/VariablesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CalculatorStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CalculatorStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <recent name="group21.calculator.test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.group21.calculator.test in ProgrammableCalculator">
+  <component name="RunManager">
     <configuration name="ComplexNumberTest.testComplexParse5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
@@ -197,7 +196,7 @@
       <workItem from="1702307366411" duration="14079000" />
       <workItem from="1702329799426" duration="2905000" />
       <workItem from="1702379544622" duration="3256000" />
-      <workItem from="1702397077629" duration="3530000" />
+      <workItem from="1702397077629" duration="4251000" />
     </task>
     <servers />
   </component>
