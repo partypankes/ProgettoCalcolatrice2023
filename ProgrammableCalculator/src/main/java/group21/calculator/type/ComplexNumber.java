@@ -1,9 +1,7 @@
 package group21.calculator.type;
-
-import group21.calculator.exceptions.DivisionByZeroException;
-
-import java.util.Objects;
-
+/**
+ * Class for ComplexNumber type
+ */
 public class ComplexNumber {
     private final double real;
     private final double imaginary;
@@ -13,32 +11,46 @@ public class ComplexNumber {
         this.imaginary = imaginary;
     }
 
+    /**
+     * Method used for obtaining the real part of the complex number
+     */
     public double getReal() {
         return real;
     }
 
+    /**
+     * Method used for obtaining the imaginary part of the complex number
+     */
     public double getImaginary() {
         return imaginary;
     }
 
-    //effettua l'addizione tra due numeri complessi CORRETTO
+    /**
+     * Method that adds two ComplexNumber and returns the result
+     */
     public ComplexNumber add(ComplexNumber other) {
         return new ComplexNumber(this.real + other.real, this.imaginary + other.imaginary);
     }
 
-    //effettua la sottrazione tra due numeri complessi CORRETTO
+    /**
+     * Method that subtracts two ComplexNumber and returns the result
+     */
     public ComplexNumber subtract(ComplexNumber other) {
         return new ComplexNumber(this.real - other.real, this.imaginary - other.imaginary);
     }
 
-    //effettua la moltiplicazione tra due numeri complessi CORRETTO
+    /**
+     * Method that multiplies two ComplexNumber and returns the result
+     */
     public ComplexNumber multiply(ComplexNumber other) {
         double newReal = this.real * other.real - this.imaginary * other.imaginary;
         double newImaginary = this.real *  other.imaginary + this.imaginary * other.real;
         return new ComplexNumber(newReal, newImaginary);
     }
 
-    //effettua la divisione tra due numeri complessi CORRETTO
+    /**
+     * Method that divides two ComplexNumber and returns the result
+     */
     public ComplexNumber divide(ComplexNumber other) {
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
 
@@ -48,7 +60,9 @@ public class ComplexNumber {
         return new ComplexNumber(newReal, newImaginary);
     }
 
-    //effettua la radice quadrata del numero complesso CORRETTO
+    /**
+     * Method that does the square root of the ComplexNumber and returns the result
+     */
     public ComplexNumber squareRoot() {
         double magnitude = Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
         double angle = Math.atan2(this.imaginary, this.real) / 2.0;
@@ -58,7 +72,10 @@ public class ComplexNumber {
 
         return new ComplexNumber(newReal, newImaginary);
     }
-    //effettua l'inversione di segno CORRETTO
+
+    /**
+     * Method that inverts the sign of the ComplexNumber and returns the result
+     */
     public ComplexNumber invertSign() {
         if(this.real == 0) {
             return new ComplexNumber(this.real, -this.imaginary);
@@ -67,10 +84,11 @@ public class ComplexNumber {
         }else return new ComplexNumber(-this.real, -this.imaginary);
     }
 
-
+    /**
+     * Method that from a String creates a ComplexNumber object
+     */
     public static ComplexNumber complexParse(String str) {
 
-        //String regex = "([-+]?(?:\\d*\\.?(\\d+)??)?([-+]?(?:\\d*\\.?(\\d+)?j)?))"; //2j
         String regex = "([-+]?(?:\\d*\\.?\\d+)?)?([-+]?(?:\\d*\\.?\\d+j)?)";
 
         String realPart = str.replaceAll(regex, "$1"); //2j
@@ -90,6 +108,9 @@ public class ComplexNumber {
         return new ComplexNumber(real, img);
     }
 
+    /**
+     * ToString() override that returns the ComplexNumber in String type
+     */
     @Override
     public String toString() {
 
@@ -99,6 +120,9 @@ public class ComplexNumber {
         return String.format("%.2f%+.2fj", real, imaginary);
     }
 
+    /**
+     * equals() override that verify if two ComplexNumber are equal, having the same real part and the same imaginary part
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
