@@ -4,6 +4,7 @@ import group21.calculator.exceptions.*;
 import group21.calculator.operation.Execute;
 import group21.calculator.type.ComplexNumber;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -63,6 +64,7 @@ public class GuiController implements Initializable {
 
         toVarButton.setOnAction(event -> handleToVarButton());
         toNumbersButton.setOnAction(event -> handleToNumbersButton());
+
         refreshVarView();
         refreshStackView();
     }
