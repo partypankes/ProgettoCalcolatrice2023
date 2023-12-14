@@ -188,7 +188,7 @@ StackView: numView + varView
     -fx-border-color: #ffe5bc;
 }
 
-.numbers:pressed, .operators:pressed, .command:pressed,
-#deleteButton:pressed, #zedButton:pressed, #put:pressed, #take:pressed{
+.numbers:pressed, .operators:pressed, .command:pressed, .varGrid .var:pressed,
+#deleteButton:pressed, #zedButton:pressed, #put:pressed, #take:pressed {
     -fx-background-color: #52615f;
 }
