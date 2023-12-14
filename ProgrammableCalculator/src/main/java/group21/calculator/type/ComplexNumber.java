@@ -1,46 +1,70 @@
 package group21.calculator.type;
+
 /**
- * Class for ComplexNumber type
+ * Represents a complex number with real and imaginary parts.
+ * This class provides methods to perform arithmetic operations (addition, subtraction,
+ * multiplication, division) on complex numbers, as well as methods to calculate the square
+ * root and invert the sign of the complex number. It also includes utility methods for parsing
+ * complex numbers from strings and representing them as strings.
  */
 public class ComplexNumber {
     private final double real;
     private final double imaginary;
 
+    /**
+     * Constructor for creating a ComplexNumber object with specified real and imaginary parts.
+     *
+     * @param real The real part of the complex number.
+     * @param imaginary The imaginary part of the complex number.
+     */
     public ComplexNumber(double real, double imaginary) {
         this.real = real;
         this.imaginary = imaginary;
     }
 
     /**
-     * Method used for obtaining the real part of the complex number
+     * Returns the real part of this complex number.
+     *
+     * @return The real part.
      */
     public double getReal() {
         return real;
     }
 
     /**
-     * Method used for obtaining the imaginary part of the complex number
+     * Returns the imaginary part of this complex number.
+     *
+     * @return The imaginary part.
      */
     public double getImaginary() {
         return imaginary;
     }
 
     /**
-     * Method that adds two ComplexNumber and returns the result
+     * Adds this complex number to another complex number and returns the result.
+     *
+     * @param other The complex number to be added to this one.
+     * @return The result of adding this complex number to the other complex number.
      */
     public ComplexNumber add(ComplexNumber other) {
         return new ComplexNumber(this.real + other.real, this.imaginary + other.imaginary);
     }
 
     /**
-     * Method that subtracts two ComplexNumber and returns the result
+     * Subtracts another complex number from this complex number and returns the result.
+     *
+     * @param other The complex number to be subtracted from this one.
+     * @return The result of subtracting the other complex number from this complex number.
      */
     public ComplexNumber subtract(ComplexNumber other) {
         return new ComplexNumber(this.real - other.real, this.imaginary - other.imaginary);
     }
 
     /**
-     * Method that multiplies two ComplexNumber and returns the result
+     * Multiplies this complex number by another complex number and returns the result.
+     *
+     * @param other The complex number to multiply this one by.
+     * @return The result of multiplying this complex number by the other complex number.
      */
     public ComplexNumber multiply(ComplexNumber other) {
         double newReal = this.real * other.real - this.imaginary * other.imaginary;
@@ -49,7 +73,10 @@ public class ComplexNumber {
     }
 
     /**
-     * Method that divides two ComplexNumber and returns the result
+     * Divides this complex number by another complex number and returns the result.
+     *
+     * @param other The complex number to divide this one by.
+     * @return The result of dividing this complex number by the other complex number.
      */
     public ComplexNumber divide(ComplexNumber other) {
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
@@ -61,7 +88,9 @@ public class ComplexNumber {
     }
 
     /**
-     * Method that does the square root of the ComplexNumber and returns the result
+     * Calculates the square root of this complex number and returns the result.
+     *
+     * @return The result of taking the square root of this complex number.
      */
     public ComplexNumber squareRoot() {
         double magnitude = Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
@@ -74,7 +103,9 @@ public class ComplexNumber {
     }
 
     /**
-     * Method that inverts the sign of the ComplexNumber and returns the result
+     * Inverts the sign of this complex number and returns the result.
+     *
+     * @return The result of inverting the sign of this complex number.
      */
     public ComplexNumber invertSign() {
         if(this.real == 0) {
@@ -85,7 +116,10 @@ public class ComplexNumber {
     }
 
     /**
-     * Method that from a String creates a ComplexNumber object
+     * Parses a string to create a ComplexNumber object.
+     *
+     * @param str The string representation of a complex number.
+     * @return A ComplexNumber object represented by the string.
      */
     public static ComplexNumber complexParse(String str) {
 
@@ -109,7 +143,9 @@ public class ComplexNumber {
     }
 
     /**
-     * ToString() override that returns the ComplexNumber in String type
+     * Returns a string representation of this complex number in the format "a + bi".
+     *
+     * @return The string representation of this complex number.
      */
     @Override
     public String toString() {
@@ -121,7 +157,11 @@ public class ComplexNumber {
     }
 
     /**
-     * equals() override that verify if two ComplexNumber are equal, having the same real part and the same imaginary part
+     * Checks if this complex number is equal to another object.
+     * Equality is based on the comparison of the real and imaginary parts.
+     *
+     * @param o The object to compare with.
+     * @return True if the objects are the same or if the real and imaginary parts are equal, false otherwise.
      */
     @Override
     public boolean equals(Object o) {
