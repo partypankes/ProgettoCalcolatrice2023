@@ -78,7 +78,6 @@ public class GuiController implements Initializable {
 
         mainKeyBoard.setDisable(true);
 
-        // Imposta un'animazione per cancellare il messaggio dopo 5 secondi
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2.5), event -> {
             displayArea.clear();
             mainKeyBoard.setDisable(false);

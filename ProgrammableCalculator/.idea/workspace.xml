@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/DivisionByZeroException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/DivisionByZeroException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/InsufficientOperandsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/InsufficientOperandsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/InvalidExpressionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/InvalidExpressionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/NoValueInVariableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/NoValueInVariableException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/StackIsEmptyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/exceptions/StackIsEmptyException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Execute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/operation/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/type/ComplexNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/type/ComplexNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/type/StackNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/type/StackNumber.java" afterDir="false" />
     </list>
-    <list id="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" name="Changes by toy-h" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/type/StackNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/group21/calculator/type/StackNumber.java" afterDir="false" />
-    </list>
+    <list id="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" name="Changes by toy-h" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,26 +40,6 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/group21/calculator/type/StackNumber.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-        <range start1="6" end1="14" start2="7" end2="13" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-        <range start1="18" end1="19" start2="17" end2="20" changelist="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" />
-        <range start1="23" end1="24" start2="24" end2="29" changelist="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" />
-        <range start1="28" end1="29" start2="33" end2="38" changelist="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" />
-        <range start1="33" end1="34" start2="42" end2="47" changelist="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" />
-        <range start1="38" end1="39" start2="51" end2="57" changelist="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" />
-        <range start1="47" end1="48" start2="65" end2="71" changelist="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" />
-        <range start1="56" end1="57" start2="79" end2="82" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-        <range start1="61" end1="62" start2="86" end2="91" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-        <range start1="71" end1="74" start2="100" end2="106" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-        <range start1="88" end1="89" start2="120" end2="126" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-        <range start1="103" end1="103" start2="140" end2="146" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-        <range start1="107" end1="122" start2="150" end2="150" changelist="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -95,7 +61,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "TestingThings",
+    "git-widget-placeholder": "Testing-Things2.0",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Nello De Luca/Desktop/ProgettoCalcolatrice2023/ProgrammableCalculator",
     "list.type.of.created.stylesheet": "CSS",
