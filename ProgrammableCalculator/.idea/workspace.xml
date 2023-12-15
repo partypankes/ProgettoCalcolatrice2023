@@ -10,8 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/ProgrammableCalculator.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/ProgrammableCalculator-1.0.dmg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/ProgrammableCalculator.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/icon.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiStarter.java" beforeDir="false" />
     </list>
     <list id="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" name="Changes by toy-h" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +101,7 @@
       <recent name="group21.calculator.test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ComplexNumberTest.testComplexParse5">
+  <component name="RunManager">
     <configuration name="ComplexNumberTest.testComplexParse5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammableCalculator" />
       <extension name="coverage">
