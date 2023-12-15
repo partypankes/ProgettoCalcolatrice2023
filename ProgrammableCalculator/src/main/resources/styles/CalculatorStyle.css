@@ -1,0 +1,194 @@
+/*
+TextArea display
+*/
+.display{
+    -fx-background-color: #a19c8c;
+    -fx-background-radius: 10;
+    -fx-focus-traversable: false;
+}
+
+.list{
+    -fx-background-color: black;
+}
+/*
+StackView: numView + varView
+*/
+.stackView{
+    -fx-background-color: #a19c8c;
+    -fx-background-radius: 10;
+}
+.stackView .list-cell{
+    -fx-min-height: 46.6px;
+    -fx-focus-traversable: false;
+}
+
+.stackView .scroll-bar:vertical .thumb {
+    -fx-background-color: #a19c8c;
+}
+/* parte fissa della barra*/
+.stackView .scroll-bar:vertical .track {
+    -fx-background-color: #322f29;
+}
+
+.stackView .scroll-bar:vertical .increment-button .increment-arrow,
+.stackView .scroll-bar:vertical .decrement-button .decrement-arrow{
+    -fx-background-color: #322f29;
+}
+
+.scroll-bar:vertical .increment-button .increment-arrow,
+.scroll-bar:vertical .decrement-button .decrement-arrow {
+    -fx-background-color: #a19c8c;
+}
+
+#numView {
+    -fx-focus-traversable: false;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+}
+#numView .list-cell:odd{
+    -fx-background-color: #a19c8c;
+    -fx-background-radius: 10;
+}
+#numView .list-cell:odd:filled {
+    -fx-background-color: derive(#a19c8c, -10%);
+}
+#numView .list-cell:even{
+    -fx-background-color: #a19c8c;
+    -fx-background-radius: 10;
+}
+
+#varView {
+    -fx-focus-traversable: false;
+    -fx-font-family: System;
+    -fx-font-size: 20px;
+}
+#varView .list-cell:odd{
+    -fx-background-color: #a19c8c
+}
+#varView .list-cell:even:filled {
+    -fx-background-color: derive(#a19c8c, -10%);
+}
+#varView .list-cell:even {
+    -fx-background-color: #a19c8c;
+}
+
+/*
+* mainBoard with numbers, commands and operator
+*/
+.mainBoard{
+    -fx-background-color: transparent;
+}
+
+.numbers{
+    -fx-background-radius: 150;
+    -fx-background-color: #322f29;
+    -fx-text-fill: #ffe5bc;
+}
+.numbers:hover{
+    -fx-border-radius: 150;
+    /*-fx-border-color: #ffe5bc;*/
+    -fx-border-color: rgba(252, 226, 185, 0.71);
+    -fx-border-width: 2;
+}
+.numbers:pressed{
+    -fx-background-color: #52615f;
+}
+
+.operators{
+    -fx-background-radius: 150;
+    -fx-background-color: #e3a02d;
+    -fx-text-fill: #393939;
+}
+.operators:hover{
+    -fx-border-radius: 150;
+    -fx-border-color: #e0be8f;
+    -fx-border-width: 2;
+}
+.operators:pressed{
+    -fx-background-color: #52615f;
+}
+
+#squareRoot{
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial Rounded MT Bold";
+}
+#plus, invertSign{
+    -fx-font-size: 25px;
+    -fx-font-family: "Arial Rounded MT Bold";
+}
+#min, multiply, divide, dot{
+    -fx-font-size: 35px;
+    -fx-font-family: "Arial Rounded MT Bold";
+}
+
+
+
+#deleteButton{
+    -fx-background-radius: 150;
+    -fx-background-color: #a19c8c;
+    -fx-text-fill: #322f29;
+}
+#deleteButton:hover{
+    -fx-border-radius: 150;
+    -fx-border-color: rgba(252, 226, 185, 0.71);
+    -fx-border-width: 2;
+}
+#deleteButton:pressed{
+    -fx-background-color: #52615f;
+}
+
+.command {
+    -fx-background-radius: 20;
+    -fx-background-color: #a19c8c;
+    -fx-text-fill: #322f29;
+}
+.command:hover {
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(252, 226, 185, 0.71);
+    -fx-border-width: 2;
+}
+
+#put, #take{
+    -fx-background-color: #e3a02d;
+}
+
+#put:hover, #take:hover{
+    -fx-border-color: #e0be8f;
+}
+#exeButton:hover{
+    -fx-border-radius: 20;
+    -fx-border-color: #e3a02d;
+}
+
+/*
+* varBoard with variables (letters)
+*/
+.varBoard{
+    -fx-background-color: transparent;
+}
+
+.varGrid .var{
+    -fx-alignment: center;
+    -fx-background-radius: 150;
+    -fx-border-radius: 150;
+    -fx-background-color: #322f29;
+    -fx-text-fill: #ffe5bc;
+}
+.varGrid .var:hover{
+    -fx-border-color: rgba(252, 226, 185, 0.91);
+}
+
+#zedButton{
+    -fx-background-radius: 150;
+    -fx-border-radius: 150;
+    -fx-background-color: #322f29;
+    -fx-text-fill: #ffe5bc;
+}
+#zedButton:hover{
+    -fx-border-color: #ffe5bc;
+}
+
+.numbers:pressed, .operators:pressed, .command:pressed, .varGrid .var:pressed,
+#deleteButton:pressed, #zedButton:pressed, #put:pressed, #take:pressed {
+    -fx-background-color: #52615f;
+}

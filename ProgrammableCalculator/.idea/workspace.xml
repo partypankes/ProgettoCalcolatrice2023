@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ProgrammableCalculator:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b2e1d8-fd04-4b2b-a29a-089fac8d77fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/exceptions/DivisionByZeroException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/exceptions/InsufficientOperandsException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/exceptions/InvalidExpressionException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/exceptions/NoValueInVariableException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/exceptions/StackIsEmptyException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/gui/GuiApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/gui/GuiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/gui/gui.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/operation/Execute.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/operation/Operation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/operation/Variables.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/type/ComplexNumber.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/group21/calculator/type/StackNumber.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/ProgrammableCalculator-1.0.dmg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/ProgrammableCalculator.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgrammableCalculator_jar/icon.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/group21/calculator/gui/GuiStarter.java" beforeDir="false" />
     </list>
+    <list id="3b4b9657-1c1d-41c4-8dbd-2d89a3e6c3f0" name="Changes by toy-h" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="CSS File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nelloodeluca"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nelloodeluca&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -60,19 +62,141 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.GuiApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.GuiStarter.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ComplexNumberTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nello De Luca/Desktop/ProgettoCalcolatrice2023/ProgrammableCalculator&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Testing-Things2.0&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/javafx-sdk-21.0.1/bin/vcruntime140_1.dll&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Informatica\ProgettoCalcolatrice\ProgettoCalcolatrice2023\ProgrammableCalculator\out\artifacts\ProgrammableCalculator_jar" />
+      <recent name="C:\Users\Nello De Luca\Desktop\ProgettoCalcolatrice2023\ProgrammableCalculator\src\main\resources" />
+      <recent name="C:\Users\Nello De Luca\Desktop\ProgettoCalcolatrice2023\ProgrammableCalculator\src\main\resources\images" />
+      <recent name="C:\Users\Nello De Luca\Desktop\ProgettoCalcolatrice2023\ProgrammableCalculator\src\main\resources\group21\calculator\gui" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="group21.calculator.test" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ComplexNumberTest.testComplexParse5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammableCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="group21.calculator.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="group21.calculator.test" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ComplexNumberTest" />
+      <option name="METHOD_NAME" value="testComplexParse5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExecuteTest.testElaborateTextArea1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammableCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="group21.calculator.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="group21.calculator.test" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ExecuteTest" />
+      <option name="METHOD_NAME" value="testElaborateTextArea1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExecuteTest.testElaborateTextArea2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammableCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="group21.calculator.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="group21.calculator.test" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ExecuteTest" />
+      <option name="METHOD_NAME" value="testElaborateTextArea2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExecuteTest.testElaborateTextArea3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammableCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="group21.calculator.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="group21.calculator.test" />
+      <option name="MAIN_CLASS_NAME" value="group21.calculator.test.ExecuteTest" />
+      <option name="METHOD_NAME" value="testElaborateTextArea3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="group21.calculator.test in ProgrammableCalculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgrammableCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="group21.calculator.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="group21.calculator.test" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.group21.calculator.test in ProgrammableCalculator" />
+        <item itemvalue="JUnit.ExecuteTest.testElaborateTextArea2" />
+        <item itemvalue="JUnit.ExecuteTest.testElaborateTextArea3" />
+        <item itemvalue="JUnit.ExecuteTest.testElaborateTextArea1" />
+        <item itemvalue="JUnit.ComplexNumberTest.testComplexParse5" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -88,6 +212,20 @@
       <workItem from="1702141777026" duration="2391000" />
       <workItem from="1702147411159" duration="34000" />
       <workItem from="1702147467096" duration="133000" />
+      <workItem from="1702147867571" duration="12000" />
+      <workItem from="1702210063247" duration="35000" />
+      <workItem from="1702224027111" duration="2457000" />
+      <workItem from="1702226763954" duration="4465000" />
+      <workItem from="1702231381247" duration="9007000" />
+      <workItem from="1702242611647" duration="774000" />
+      <workItem from="1702307366411" duration="14079000" />
+      <workItem from="1702329799426" duration="2905000" />
+      <workItem from="1702379544622" duration="3256000" />
+      <workItem from="1702397077629" duration="4251000" />
+      <workItem from="1702556404547" duration="150000" />
+      <workItem from="1702556563083" duration="4591000" />
+      <workItem from="1702583461529" duration="26000" />
+      <workItem from="1702593915574" duration="716000" />
     </task>
     <servers />
   </component>
@@ -96,5 +234,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

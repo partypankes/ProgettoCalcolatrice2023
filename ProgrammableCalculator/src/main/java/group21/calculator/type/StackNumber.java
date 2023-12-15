@@ -1,42 +1,60 @@
 package group21.calculator.type;
+
 import group21.calculator.exceptions.InsufficientOperandsException;
 import group21.calculator.exceptions.StackIsEmptyException;
 
 import java.util.Stack;
 
-
-/*Classedello stack, contenete tutti i metodi dello stack di inserimento e rimozione.
-* Implementa anche tutti i metodi richiesti dallo StackManipulation:
-* clear, -> rimuove tutti gli elementi dallo stack
-* drop, -> elimina il top elemento
-* dup, -> pusha una copia dell'ultimo elemento
-* over, -> pusha una copia del penultimo valore (before top)
-* swap -> cambia la posizione degli ultimi due valori*/
+/**
+ * This class represents a stack specifically designed for holding ComplexNumber objects.
+ * It provides various stack operations such as push, pop, peek, and additional operations
+ * like duplicate, swap, and over, tailored for use in a calculator context. This stack acts
+ * as the memory of the calculator, storing the numbers upon which operations are performed.
+ */
 public class StackNumber {
 
     private final Stack<ComplexNumber> stack;
 
-    //costruttore dello stack
+    /**
+     * Constructor for the StackNumber class. Initializes a new Stack object to hold ComplexNumber instances.
+     */
     public StackNumber() {
         stack = new Stack<>();
     }
 
-    //getter StackNumber
+    /**
+     * Gets the current size of the stack.
+     *
+     * @return The size of the stack.
+     */
     public int getStackSize() {
         return stack.size();
     }
 
-    //metodo isEmpty dello stack
+    /**
+     * Checks if the stack is empty.
+     *
+     * @return True if the stack is empty, false otherwise.
+     */
     public boolean isEmpty() {
         return stack.isEmpty();
     }
 
-    //Pusha il numero nello StackNumber
+    /**
+     * Pushes a ComplexNumber onto the stack.
+     *
+     * @param number The ComplexNumber to be added to the stack.
+     */
     public void pushNumber(ComplexNumber number){
         stack.push(number);
     }
 
-    //legge il valore nella top dello stack
+    /**
+     * Peeks at the top element of the stack without removing it.
+     *
+     * @return The ComplexNumber at the top of the stack.
+     * @throws StackIsEmptyException If the stack is empty.
+     */
     public ComplexNumber peekNumber() throws StackIsEmptyException{
         if (isEmpty()){
             throw new StackIsEmptyException();
@@ -45,7 +63,12 @@ public class StackNumber {
         }
     }
 
-    //DROP: rimuove e ritorna l'elemento top dello stack
+    /**
+     * Removes and returns the top element of the stack.
+     *
+     * @return The ComplexNumber removed from the top of the stack.
+     * @throws StackIsEmptyException If the stack is empty.
+     */
     public ComplexNumber dropNumber() throws StackIsEmptyException{
         if(isEmpty()){
             throw new StackIsEmptyException();
@@ -54,24 +77,32 @@ public class StackNumber {
         }
     }
 
-    //CLEAR: cancella il contenuto dello stack
+    /**
+     * Clears the stack of all elements.
+     */
     public void clearNumber(){
         stack.clear();
     }
 
-    //DUP: legge l'elemento nella top dello stack e pusha una sua copia nello stack
+    /**
+     * Duplicates the top element of the stack.
+     *
+     * @throws StackIsEmptyException If the stack is empty.
+     */
     public void dupNumber() throws StackIsEmptyException{
         if (isEmpty()){
             throw new StackIsEmptyException();
         }else{
             pushNumber(peekNumber());
         }
-
     }
 
-
-
-    //SWAP: scambia l'elemento nella top dello stack con il penultimo - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack] le eccezioni sono inclue in drop e peek
+    /**
+     * Swaps the top two elements of the stack.
+     *
+     * @throws StackIsEmptyException If the stack is empty.
+     * @throws InsufficientOperandsException If there are less than two elements in the stack.
+     */
     public void swapNumber() throws StackIsEmptyException, InsufficientOperandsException{
         if(stack.isEmpty()){
             throw new StackIsEmptyException ();
@@ -86,7 +117,12 @@ public class StackNumber {
         }
     }
 
-    //OVER: pusha una copia del penultimo elemento - [l'operazione puo essere svolta solo se ci sono almeno due lementi nello stack] le eccezioni sono inclue in drop e peek
+    /**
+     * Pushes a copy of the second-to-top element of the stack onto the top.
+     *
+     * @throws StackIsEmptyException If the stack is empty.
+     * @throws InsufficientOperandsException If there are less than two elements in the stack.
+     */
     public void overNumber() throws StackIsEmptyException, InsufficientOperandsException{
         if (stack.isEmpty()){
             throw new StackIsEmptyException ();
@@ -101,24 +137,15 @@ public class StackNumber {
         }
     }
 
+    /**
+     * Retrieves the string representation of the number at the specified index in the stack.
+     *
+     * @param i The index of the number in the stack.
+     * @return The string representation of the ComplexNumber at the specified index.
+     */
     public String getNumber(int i) {
         return stack.get(i).toString();
     }
-
-    /*public String printStack(){
-        StringBuilder str = new StringBuilder();
-        for (ComplexNumber complexNumber : this.stack) {
-            str.append(complexNumber.toString());
-            str.append("\n");
-        }
-        return str.toString();
-
-    }
-
-
-    public Stack<ComplexNumber> getStack() {
-        return stack;
-    }*/
 
 
 }
